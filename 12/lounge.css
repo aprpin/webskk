@@ -1,0 +1,21 @@
+h1,h2{ 
+  /* 标题样式 */
+  color: grey; /* 字体颜色 */
+}
+
+h1{ 
+  border-bottom: 1px solid black;  /* 边框底部1像素宽的黑色实线 */
+}
+
+p{
+  color: maroon; /* 字体颜色 */
+}
+
+body{
+  font-family: Arial; /* 字体 */
+  font-size: 1.5em; /* 字号 */
+}
+
+em{
+  font-family: "Cascadia Mono";
+}
