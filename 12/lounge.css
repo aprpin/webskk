@@ -25,3 +25,11 @@ em{
 html{
   font-size: 20px;
 }
+
+body{
+	color: lightsalmon; /* 用英文表示颜色 */
+	color: rgb(227, 180, 184); /* 用RGB表示颜色 */
+	color: #5a1216; /* 用16进制表示颜色 */
+	color: rgba(39,177,182,0.8); /* 用RGBA表示颜色，给颜色添加透明度 */
+	color: #2775b6CC; /* 用16进制表示颜色 */
+}
