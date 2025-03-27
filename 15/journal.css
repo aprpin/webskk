@@ -1,0 +1,22 @@
+html{
+  font-family:Verdana, Geneva, Arial; /* 字体 */
+  font-size: 12px; /* 12像素 */
+}
+
+h1{
+  font-size: 2.2rem; /* 根据HTML来放大2.2倍 */
+}
+
+h2{
+  font-size: 1.3rem; /* 根据HTML来放大1.3倍 */
+  font-weight: normal; /* 不加粗 */
+} 
+
+blockquote{
+  font-style: italic; /* 斜体 */
+}
+
+h1,h2{
+  color: #CC6600; /* 用16进制表示颜色 */
+  border-bottom: thin dotted #888888; /* 边框底部1像素宽的黑色实线 */
+}
