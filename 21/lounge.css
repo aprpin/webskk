@@ -1,0 +1,130 @@
+body {
+    font-size: small; /* 新的属性值，请自行了解 */
+    font-family: Verdana,Helvetica,Arial; /* 字体 */
+    line-height: 1.6em; /* 行高 */
+}
+
+h1, h2 {
+    color: #007e7e; /* 将标题设置为一种青绿色，使他和 logo 更相合 */
+}
+
+h1 {
+    font-size: 1.5em; /* 相对于父元素的字体大小 */
+}
+
+h2 {
+    font-size: 1.3em; /* 相对于父元素的字体大小 */
+}
+.guarantee {
+    border-color: white; /* 边框颜色 */
+    border-width: 1px; /* 边框宽度 */
+    border-style: dashed; /* 边框样式 */
+    background-color: #a7cece; /* 背景颜色 */
+    padding: 25px; /* 内边距 */
+    margin: 30px; /* 外边距 */
+    line-height: 1.9em; /* 行高 */
+    font-style: italic; /* 斜体 */
+    color: #444444; /* 文字颜色 */
+    font-family: Georgia, "Times New Roman"; /* 字体 */
+    background-image: url(images/background.gif); /* 背景图片 */
+    background-repeat: no-repeat; /* 背景图片不重复 */
+    background-position: top left; /* 背景图片位置 */
+    padding-left: 80px; /* 内边距 */
+    margin-right: 40px; /* 外边距 */
+    border-radius: 0 30px 0 30px; /* 圆角 */
+}
+
+.elixirs {
+    border-width: thin; /* 边框宽度 */
+    border-style: solid; /* 边框样式 */
+    border-color: #007e7e; /* 边框颜色 */
+    width: 200px; /* width 属性允许指定内容区的宽度 */
+    padding-right: 20px; /* 内边距 */
+    padding-bottom: 20px; /* 内边距 */
+    padding-left: 20px; /* 内边距 */
+    margin-left: 20px; /* 外边距 */
+    background-image: url(images/cocktail.gif); /* 背景图片 */
+    background-repeat: repeat-x; /* 背景图片水平重复 */
+    text-align: center; /* 文字居中 */
+    line-height: 1; /* 行高 */
+}
+
+.elixirs h2 {
+    color: black; /* 文字颜色 */
+}
+
+.elixirs h3 {
+    color: #d12c47; /* 文字颜色 */
+}
+
+.cd {
+    font-style: italic; /* 斜体 */
+}
+
+.artist {
+    font-weight: bold; /* 加粗 */
+}
+
+li span {
+    width: 500px; /* width 属性允许指定内容区的宽度 */
+    display: inline-block; /* 内联块元素 */
+}
+
+.elixirs a:link {
+    color: #007e7e; /* 文字颜色 */
+}
+
+.elixirs a:visited {
+    color: #333333; /* 文字颜色 */
+}
+
+.elixirs a:hover {
+    background: #f88396; /* 背景颜色 */
+    color: #0d5353; /* 文字颜色 */
+} 
+
+.left{
+    margin-right: 10px; /* 外边距 */ 
+}
+
+.right{
+    margin-left: 20px; /* 外边距 */
+}
+
+.ruler{
+    display: inline-block; /* 内联块元素 */
+    width: 30px; /* width 属性允许指定内容区的宽度 */;
+}
+
+.right {
+	float: right;
+}
+
+div.block {
+	width: 45vw;
+	height: 20vh;
+	border: 2px solid black;
+}
+
+.top {
+	margin-bottom: 10px;
+}
+
+.bottom {
+	margin-top: 20px;
+}
+
+.ruler {
+	height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
