@@ -1,0 +1,14 @@
+#main {
+  /* 可以根据需要设置 main 的宽度 */
+  width: calc(100% - 280px); 
+  float: left;
+}
+
+#sidebar {
+  width: 280px;
+  float: right;
+}
+
+#footer {
+  clear: both; /* 清除浮动，避免影响页脚布局 */
+}
