@@ -89,3 +89,28 @@ div.talbeRow {
   background-color: #efe5d0; /* 背景色 */
   padding: 15px; /* 内边距 */
 } 
+
+.header-img {
+  width: 260px; /* 显示的宽度为足够露出 Logo 和 slogan 为准 */ 
+  height: 108px; /* 图片高度 */
+  overflow: hidden; /* 隐藏溢出部分 */ 
+  background-image: url('images/header.gif');
+}
+
+div.left-header, div.right-header {
+  display: table-cell; /* 使两个div显示为表格单元格 */
+  width: 260px; /* 设置宽度 */
+  height: 108px; /* 设置高度 */
+  overflow: hidden; /* 隐藏溢出部分 */
+}
+
+div.left-header {
+  background-position-x: 0px;
+  background-position-y: 0px;
+}
+
+div.right-header {
+  float: right; /* 右浮动 */
+  background-position-x: -540px;
+  background-position-y: 0px;
+}
