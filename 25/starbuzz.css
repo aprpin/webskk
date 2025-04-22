@@ -1,116 +1,102 @@
 body { 
-  background-color: #b5a789; /* 背景色 */
-  font-family:      Georgia, "Times New Roman", Times, serif; /* 字体 */
-  font-size:        small; /* 字体大小 */
-  margin:           0px; /* 外边距 */
+  background-color: #b5a789;
+  font-family:      Georgia, "Times New Roman", Times, serif;
+  font-size:        small;
+  margin:           0px;
 }
 
 .header {
-  background-color: #675c47; /* 背景色 */
-  margin:           10px; /* 外边距 */
-  height:           108px; /* 高度 */
+  background-color: #675c47;
+  margin:           10px;
+  height:           108px;
 }
 
 .main {
-  background:       #efe5d0 url(images/background.gif) top left; /* 背景色 */
-  font-size:        105%; /* 字体大小 */
-  padding:          15px;   /* 内边距 */
-  /*margin:           0px 10px 10px 10px; */  /* 外边距 */
   display: table-cell; /* 显示方式 */
-  vertical-align: top; /* 垂直对齐方式:顶端对齐 */
-  border-spacing: 10px;  /* 为表格中地单元格设置 10px 的边框间距（相当于外边距）*/;
+  vertical-align: top;  /* 垂直对齐: 顶端对齐 */
+  background:       #efe5d0 url(images/background.gif) top left; /* 背景颜色 */
+  font-size:        105%; /* 字体大小 */
+  padding:          15px; /* 内边距 */
+  margin:           0px 10px 10px 10px;
 }
 
 .sidebar {
-  background:       #efe5d0 url(images/background.gif) bottom right; /* 背景色 */
+  display: table-cell;  /* 显示方式 */
+  vertical-align: top;   /*垂直对齐: 顶端对齐 */
+  background:       #efe5d0 url(images/background.gif) bottom right; /* 背景颜色 */
   font-size:        105%; /* 字体大小 */
-  padding:          15px;   /* 内边距 */
-  /*margin:           0px 10px 10px 10px; */  /* 外边距 */
-  display: table-cell; /* 显示方式 */
-  vertical-align: top; /* 垂直对齐方式:顶端对齐 */
-  border-spacing: 10px;  /* 为表格中地单元格设置 10px 的边框间距（相当于外边距）*/;
+  padding:          15px; /* 内边距 */
+  margin:           0px 10px 10px 10px;
+  /*width:            200px;*/
 }
 
 .footer {
-  background-color: #675c47; /* 背景色 */
-  color:            #efe5d0; /* 字体颜色 */
-  text-align:       center; /* 文本对齐方式 */
-  padding:          15px;  /* 内边距 */
-  margin:           10px;  /* 外边距 */
-  font-size:        90%;   /* 字体大小 */
-  clear: both; /* 清除浮动，避免影响页脚布局 */
+  background-color: #675c47;
+  color:            #efe5d0;
+  text-align:       center;
+  padding:          15px;
+  margin:           10px;
+  font-size:        90%;
+  clear:            right;
 }
 
 h1 {
-  font-size:        120%; /* 字体大小 */
-  color:            #954b4b; /* 字体颜色 */
+  font-size:        120%;
+  color:            #954b4b;
 }
 
-.slogan {
-   color: #954b4b;  /* 字体颜色 */
-  } 
+.slogan { color: #954b4b; }
 
 .beanheading {
-  text-align:       center;  /* 文本对齐方式 */
-  line-height:      1.8em;  /* 行高 */
+  text-align:       center;
+  line-height:      1.8em;
 }
 
 a:link {
-  color:            #b76666; /* 链接颜色 */
-  text-decoration:  none; /* 文本装饰 */
-  border-bottom:    thin dotted #b76666; /* 边框 */
+  color:            #b76666;
+  text-decoration:  none;
+  border-bottom:    thin dotted #b76666;
 }
 a:visited {
-  color:            #675c47; /* 链接颜色 */
-  text-decoration:  none; /* 文本装饰 */
-  border-bottom:    thin dotted #675c47;  /* 边框 */
+  color:            #675c47;
+  text-decoration:  none;
+  border-bottom:    thin dotted #675c47;
 }
 
 .allcontent {
-	width:               800px; /* 宽度 */
-	padding-top:           5px; /* 内边距 */
-	padding-bottom:        5px; /* 内边距 */ 
-	background-color:  #675c47; /* 背景色 */ 
-  margin-left: auto;  /* 外边距 */
-  margin-right: auto;  /* 外边距 */
+	width:               800px;
+	padding-top:           5px;
+	padding-bottom:        5px;
+	background-color:  #675c47;
+	margin-left:          auto;
+	margin-right:         auto;
 }
 
 div.tableContainer {
-  display: table;
-  border-spacing: 10px;  /* 为表格中地单元格设置 10px 的边框间距（相当于外边距）*/
+	display: table;
+	border-spacing: 10px;	
 }
 
-div.talbeRow {
-  display: table-row;
+div.tableRow {
+	display: table-row;
 }
 
 .drinks {
-  display: table-cell; /* 显示方式 */
-  background-color: #efe5d0; /* 背景色 */
-  padding: 15px; /* 内边距 */
-} 
+  display: table-cell;
+  background-color: #efe5d0;
+  padding: 15px;
+}
 
 .header-img {
-  width: 260px; /* 显示的宽度为足够露出 Logo 和 slogan 为准 */ 
-  height: 108px; /* 图片高度 */
-  overflow: hidden; /* 隐藏溢出部分 */ 
-  background-image: url('images/header.gif');
+  width: 260px;
+  height: 108px;
+  background-image: url(./images/header.gif);
 }
-
-div.left-header, div.right-header {
-  display: table-cell; /* 使两个div显示为表格单元格 */
-  width: 260px; /* 设置宽度 */
-  height: 108px; /* 设置高度 */
-  overflow: hidden; /* 隐藏溢出部分 */
+div.right-header {
+  background-position-x: -540px ;
+  float: right;
 }
-
 div.left-header {
   background-position-x: 0px;
-  background-position-y: 0px;
-}
-
-div.right-header {
-  float: right; /* 右浮动 */
-  background-position-x: -540px;
-  background-position-y: 0px;
+  float: left;
 }
