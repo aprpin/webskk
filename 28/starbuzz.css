@@ -7,41 +7,63 @@ body {
 }
 
 /* 头部样式 */
-.header {
-  background-color: #675c47; /* 背景颜色 */
-  margin:           10px; /* 外边距 */
-  height:           108px; /* 高度 */
+header {
+  background-color: #675c47;
+  margin: 10px;
+  height: 108px;
 }
 
 /* 主要内容区域样式 */
-.main {
-  display: table-cell; /* 显示方式：表格单元格 */
-  vertical-align: top;  /* 垂直对齐：顶端对齐 */
-  background:       #efe5d0 url(images/background.gif) top left; /* 背景颜色和图片 */
-  font-size:        105%; /* 字体大小 */
-  padding:          15px; /* 内边距 */
-  margin:           0px 10px 10px 10px; /* 外边距 */
+main {
+  display: table;
+  width: 100%;
+  border-spacing: 10px;
+}
+
+/* 表格行样式 */
+.tableRow {
+  display: table-row;
+}
+
+/* 导航栏样式 */
+nav.drinks {
+  display: table-cell;
+  background-color: #efe5d0;
+  padding: 15px 15px 0 15px; /* 只保留左右和下边距 */
+  width: 20%;
+  vertical-align: top; /* 确保内容顶部对齐 */
+}
+
+/* 文章内容样式 */
+article {
+  display: table-cell;
+  background: #efe5d0 url(images/background.gif) top left;
+  font-size: 105%;
+  padding: 15px 15px 0 15px; /* 只保留左右和下边距 */
+  margin: 0px 10px 10px 10px;
+  width: 60%;
+  vertical-align: top; /* 确保内容顶部对齐 */
 }
 
 /* 侧边栏样式 */
-.sidebar {
-  display: table-cell;  /* 显示方式：表格单元格 */
-  vertical-align: top;   /* 垂直对齐：顶端对齐 */
-  background:       #efe5d0 url(images/background.gif) bottom right; /* 背景颜色和图片 */
-  font-size:        105%; /* 字体大小 */
-  padding:          15px; /* 内边距 */
-  margin:           0px 10px 10px 10px; /* 外边距 */
+aside.sidebar {
+  display: table-cell;
+  background: #efe5d0 url(images/background.gif) bottom right;
+  font-size: 105%;
+  padding: 15px;
+  margin: 0px 10px 10px 10px;
+  width: 20%;
 }
 
 /* 页脚样式 */
-.footer {
-  background-color: #675c47; /* 背景颜色 */
-  color:            #efe5d0; /* 文字颜色 */
-  text-align:       center; /* 文字居中 */
-  padding:          15px; /* 内边距 */
-  margin:           10px; /* 外边距 */
-  font-size:        90%; /* 字体大小 */
-  clear:            right; /* 清除浮动 */
+footer {  /* 将 .footer 改为 footer */
+  background-color: #675c47;
+  color:            #efe5d0;
+  text-align:       center;
+  padding:          15px;
+  margin:           10px;
+  font-size:        90%;
+  clear:            right;
 }
 
 /* 一级标题样式 */
