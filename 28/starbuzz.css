@@ -175,7 +175,3 @@ div.left-header {
 .coupon a, img{
 	border: none; /* 去掉边框 */
 }
-/* 描述样式 */
-.description {
-  font-style: italic; /* 斜体 */
-}
