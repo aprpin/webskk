@@ -1,0 +1,44 @@
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* 设置了字体*/
+  padding: 20px;  /* 页面边距 */
+  max-width: 800px; /* 页面最大宽度 */
+  margin: 0 auto; /* 水平居中 */
+  line-height: 1.6; /* 行高 */
+}
+
+.schools-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.school-link {
+  color: #000000; /* 设置链接的默认文字颜色为黑色 */
+  text-decoration: none; /* 移除链接的默认下划线 */
+  font-size: 16px; /* 设置链接的字体大小为16像素 */
+  font-weight: 500; /* 设置链接的字体粗细为中等 */
+  position: relative; /* 设置相对定位，用于伪元素的定位 */
+  padding-bottom: 2px; /* 在链接底部添加2像素的内边距，为下划线留出空间 */
+  transition: color 0.2s ease; /* 设置文字颜色的过渡效果，持续0.2秒，使用ease缓动函数 */
+}
+
+.school-link:hover {
+  color: #006cb8; /* Stanford's dark blue color */
+}
+
+.school-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #006cb8; /* Deep blue underline */
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.school-link:hover::after {
+  transform: scaleX(1);
+}
