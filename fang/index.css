@@ -1,20 +1,47 @@
+html {
+  font-size: 62.5%; 
+}
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif; /* 设置了字体*/
-  padding: 20px;  /* 页面边距 */
-  max-width: 800px; /* 页面最大宽度 */
-  margin: 0 auto; /* 水平居中 */
-  line-height: 1.6; /* 行高 */
+  font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica, Arial', 'sans-serif'; /* 字体 */
+  padding: 20px;  /* 增加内边距 */
+  /* max-width: 800px;  /* 限制最大宽度 */
+  margin: 0 auto;  /* 居中对齐 */
+  text-align: center; /* 新增居中属性 */
+  line-height: 1.5;  /* 行高 */
+  font-size: 1.8em;  /* 字体大小 */
+  color: #000;  /* 字体颜色 */
 }
 
-.schools-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 20px 0;
+.schools-container { /* 容器样式 */
+  display: flex;  /* 使用 Flexbox 布局 */
+  flex-wrap: nowrap; /* 强制不换行 */
+  white-space: nowrap; /* 防止文本换行 */
+  padding: 10px 0;  /* 上下内边距 */
+  margin: 0 auto;  /* 居中对齐 */
+  max-width: 90%;  /* 新增最大宽度限制 */
+  justify-content: center;  /* 新增水平居中 */
 }
 
-.school-link {
-  color: #000000; /* 设置链接的默认文字颜色为黑色 */
+.school-link, .separator {  /* 子元素样式 */
+  white-space: nowrap; /* 子元素强制不换行 */
+  display: inline-block; /* 保持行内布局 */
+}
+
+.separator {  /* 分隔符样式 */
+  color: #666;  /* 分隔符颜色 */
+  margin: 0 5px;  /* 分隔符左右间距 */
+  user-select: none;  /* 防止用户选择分隔符 */
+  margin: 0 15px;  /* 分隔符左右间距 */
+}
+
+.school-link {  /* 链接样式 */
+  color: rgb(0, 108, 184); /* 设置链接的默认文字颜色为蓝色 */
   text-decoration: none; /* 移除链接的默认下划线 */
   font-size: 16px; /* 设置链接的字体大小为16像素 */
   font-weight: 500; /* 设置链接的字体粗细为中等 */
@@ -22,23 +49,152 @@ body {
   padding-bottom: 2px; /* 在链接底部添加2像素的内边距，为下划线留出空间 */
   transition: color 0.2s ease; /* 设置文字颜色的过渡效果，持续0.2秒，使用ease缓动函数 */
 }
-
-.school-link:hover {
-  color: #006cb8; /* Stanford's dark blue color */
+ 
+.school-link:hover { /* 当鼠标悬停在链接上时 */
+  color:#005B94; /* Stanford's dark blue color */
 }
 
-.school-link::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #006cb8; /* Deep blue underline */
-  transform: scaleX(0);
-  transition: transform 0.2s ease;
+.school-link::after { /* 伪元素，用于创建下划线效果 */
+  content: '';  /* 内容为空 */
+  position: absolute;  /* 绝对定位 */
+  width: 100%;  /* 宽度为100% */
+  height: 2px;  /* 高度为2像素 */
+  bottom: 0;  /* 底部对齐 */
+  left: 0;  /* 左对齐 */
+  background-color: #005B94;  /* 下划线颜色 */
+  transform: scaleX(0);  /* 初始状态下不显示下划线 */
+  transition: transform 0.2s ease;  /* 过渡效果，持续0.2秒，使用ease缓动函数 */
 }
 
-.school-link:hover::after {
-  transform: scaleX(1);
+.school-link:hover::after { /* 当鼠标悬停在链接上时 */
+  transform: scaleX(1);  /* 显示下划线 */
+}
+
+/* 图片行容器：横向排列，间距一致 */
+.image-row { 
+  display: flex; 
+  gap: 35px;  /* 图片之间的间隙 */
+  margin: 0 65px;  /* 左右边距 */
+  padding: 20px 0;  /* 上下内边距 */
+  justify-content: center;  /* 水平居中 */
+}
+
+.image-row img {
+  width: calc(33.333% - 13.33px);  /* 精确计算宽度（总间隙40px分3份） */
+  aspect-ratio: 3 / 2;  /* 保持原始比例 */
+  object-fit: cover;  /* 裁剪填充 */
+  /*transition: transform 0.3s ease;  /* 添加缩放动画 */
+}
+
+/*.image-row img:hover {  /* 鼠标悬停时放大 */
+/* transform: scale(1.02);  /* 悬停时轻微放大 */
+
+
+/* 响应式调整：小屏幕时缩小图片 */
+@media (max-width: 768px) {
+  .image-row {
+    flex-wrap: wrap; /* 允许换行 */
+  }
+  .image-row img {
+    width: 280px; /* 略小于桌面端 */
+  }
+}
+
+/* 主标题 */
+h1 {
+  font-family: "Source Sans Pro", Arial, sans-serif; /* 无衬线字体 */
+  font-weight: 900;  /* 加粗 */
+  font: size 2rem; /* 48px */
+  margin-bottom: 1rem;  /* 底部间距 */
+}
+
+/* 副标题描述 */
+.subtitle {
+  text-align: center; /* 居中对齐 */
+    line-height: 1.5; /* 行高 */
+    font-size: 1.8em;  /* 字体大小 */
+    color: #000;  /* 字体颜色 */
+}
+
+/* 二级标题 */
+h2 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;  /* 加粗 */
+  margin: 1.5rem 0 0.5rem;  /* 上间距，左右间距 */
+}
+
+/* 正文 */
+p {
+  font-family: "Source Sans Pro", Arial, sans-serif; /* 无衬线字体 */
+  font-weight: 400;  
+  font-size: 1rem; /* 16px */
+  line-height: 1.5; /* 行高 */
+  color: #4D4D4D; /* 深灰色 */
+}
+
+/* 底部链接标签 */
+.link-label {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600; /* 加粗 */
+  color: #8C1515; /* 红色 */
+  text-transform: uppercase; /* 可选：字母大写 */
+}
+
+.link-label::after {
+  content: " >";  /* 箭头符号 */
+  margin-left: 0.25rem;  /* 箭头与文本之间的间距 */
+}
+
+/* 链接标签 */
+.link {
+  font-family: "Source Sans Pro", sans-serif; /* 无衬线字体 */
+  font-weight: 700;  /* 加粗 */
+  text-transform: uppercase;  /* 字母大写 */
+  letter-spacing: 0.05em;  /* 字母间距 */
+} 
+
+/* 表格文字 */
+.table-text {
+  font-family: "Source Sans Pro", sans-serif; /* 无衬线字体 */
+  font-weight: 600;  /* 加粗 */
+  text-transform: uppercase;  /* 字母大写 */
+  letter-spacing: 0.03em;  /* 字母间距 */
+}
+
+.red-block-button {
+  display: inline-block;          /* 行内块级元素 */
+  background-color: #8C1515;     /* 斯坦福红色 */
+  color: white;                  /* 白色文字 */
+  padding: 12px 24px;            /* 内边距：上下12px，左右24px */
+  font-family: 'Source Sans Pro', Arial, sans-serif; /* 字体 */
+  font-weight: 600;              /* 中等加粗 */
+  text-transform: uppercase;    /* 字母大写 */
+  letter-spacing: 0.05em;       /* 字母间距 */
+  text-decoration: none;         /* 去除下划线 */
+  border: none;                  /* 无边框 */
+  cursor: pointer;               /* 鼠标指针变为手形 */
+  transition: background-color 0.3s; /* 颜色过渡动画 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 轻微阴影 */
+}
+
+/* 鼠标悬停效果 */
+.red-block-button:hover {
+  background-color: #6C0E0E;     /* 更深的红色 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 加深阴影 */
+}
+
+/* 可选：点击效果 */
+.red-block-button:active {
+  transform: translateY(1px);    /* 点击时轻微下移 */
+}
+
+.education-link::after {  /* 伪元素 */
+  content: ">";
+  display: inline-block;  /* 新增 */
+  margin-left: 8px;  /* 调整间距 */
+  transition: transform 0.3s ease;  /* 过渡效果 */
+}
+
+.education-link:hover::after {  /* 鼠标悬停时 */
+  transform: translateX(3px);  /* 向右移动3像素 */
 }
