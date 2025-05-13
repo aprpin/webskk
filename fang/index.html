@@ -9,37 +9,60 @@
   <body>  <!--这是网页的内容-->
     <h1>Academics</h1>  <!--这是一级标题-->
     
-    <subtitle>  <!--这是段落内容--> 
-    Preparing students to make meaningful contributions to society <br> <!--这是换行-->
-    as engaged citizens and leaders in a complex world
+    <subtitle class="aaa"> 
+      Preparing students to make meaningful <br>
+      contributions to society as engaged citizens <br>
+       and leaders in a complex world
     </subtitle>  <!--这是段落内容结尾-->
-    <div class="image-row">  <!-- 图片容器 -->
-      <img src="images/20230418_Grayson_Armour_95A0681-2.webp" alt="黄衣服男人图片">
-      <img src="images/20220714Hopkins_Marine_Station_N6A7270-1-1499x1000 (1).webp" alt="一男一女图片">
-      <img src="images/20211117_Elizabeth_Reese_N6A0441-1499x1000.webp" alt="黄色外套女人图片">
-    </div>
-    <div class="education-container">
-      <!-- 黄衣服男人图片 -->
-      <div class="education-card" class="education-card1"> 
-          <h2>Undergraduate Education</h2>  <!--这是二级标题-->
-          <p>Rich learning experiences that provide a broad liberal arts foundation and deep subject-area expertise</p>  <!--这是段落内容-->
-          <a href="#" class="education-link">Undergraduate Education</a>  <!--这是链接-->
-      </div>
-      
-      <!-- 一男一女图片 -->
-      <div class="education-card" class="education-card1">  
-          <h2>Graduate Education</h2>
-          <p>Unsurpassed opportunities to participate in the advancement of entire fields of knowledge</p>
-          <a href="#" class="education-link">Graduate Education</a>
-      </div>
-      
-      <!-- 黄色外套女人图片 -->
-      <div class="education-card">
-          <h2>Driving Impact</h2>
-          <p>Continuing adult education, executive and professional programs, and programs for K-12 students</p>
-          <a href="#" class="education-link">Lifelong Learning</a>  
-      </div>
-  </div>
+
+     <!-- 新增两个空行 -->
+  <br><br>
+
+    <section class="card-grid"> <!-- 卡片网格区域，使用 card-grid 类 -->
+      <!-- 学生生活卡片 -->
+      <article class="campus-card"> <!-- 校园卡片元素，使用 campus-card 类 -->
+          <figure class="card-image"> <!-- 图片容器，使用 card-image 类 -->
+              <!-- 学生宿舍和社交活动图片 -->
+              <img src="images/20230418_Grayson_Armour_95A0681-2.webp" alt="黄衣男人" 
+                   style="width: var(--card-width); height: var(--card-height);"> <!-- 图片元素，设置图片路径、替代文本和尺寸 -->
+          </figure>
+          <div class="card-content"> <!-- 卡片内容区域，使用 card-content 类 -->
+              <h2>Undergraduate Education</h2> <!-- 二级标题，显示学生生活 -->
+              <p>Rich learning experiences that provide a broad liberal arts foundation and deep subject-area expertise</p> <!-- 段落描述学生生活 -->
+              <a href="#">Undergraduate Education &gt;</a> <!-- 链接，指向学生事务页面 -->
+          </div>
+      </article>
+
+      <!-- Arts & Culture Card -->
+      <article class="campus-card"> <!-- 校园卡片元素，使用 campus-card 类 -->
+          <figure class="card-image"> <!-- 图片容器，使用 card-image 类 -->
+              <!-- 校园艺术展览图片 -->
+              <img src="images/20220714Hopkins_Marine_Station_N6A7270-1-1499x1000 (1).webp" alt="灰衣男人" 
+                   style="width: var(--card-width); height: var(--card-height);"> <!-- 图片元素，设置图片路径、替代文本和尺寸 -->
+          </figure>
+          <div class="card-content"> <!-- 卡片内容区域，使用 card-content 类 -->
+              <h2>Graduate Education</h2> <!-- 二级标题，显示艺术与文化 -->
+              <p>Unsurpassed opportunities to participate in the advancement of entire fields of knowledge</p> <!-- 段落描述艺术与文化 -->
+              <a href="#">Graduate Education &gt;</a> <!-- 链接，指向斯坦福艺术页面 -->
+          </div>
+      </article>
+
+      <!-- Recreation & Wellness Card -->
+      <article class="campus-card"> <!-- 校园卡片元素，使用 campus-card 类 -->
+          <figure class="card-image"> <!-- 图片容器，使用 card-image 类 -->
+              <!-- 校园健身中心图片 -->
+              <img src="images/20211117_Elizabeth_Reese_N6A0441-1499x1000.webp" alt="黄色外套女人" 
+                   style="width: var(--card-width); height: var(--card-height);"> <!-- 图片元素，设置图片路径、替代文本和尺寸 -->
+          </figure>
+          <div class="card-content"> <!-- 卡片内容区域，使用 card-content 类 -->
+              <h2>Driving Impact</h2> <!-- 二级标题，显示娱乐与健康 -->
+              <p>Continuing adult education, executive and professional programs, and programs for K-12 students</p> <!-- 段落描述娱乐与健康 -->
+              <a href="#">Lifelong Learning &gt;</a> <!-- 链接，指向娱乐与健康页面 -->
+          </div>
+      </article>
+  </section>
+
+ 
 
   <h2>Seven schools in which to pursue your passions</h2>  <!--这是二级标题-->
 
@@ -52,5 +75,8 @@
     <a href="#" class="school-link">Sustainability</a><span class="separator">|</span>
     <a href="#" class="school-link">Business</a>
   </div>  <!--这是段落内容结尾-->
-
+ <!-- 新增两个空行 -->
+  <br><br>
+  
   <a href="#" class="red-block-button">More about academics</a>
+</body>

@@ -1,0 +1,69 @@
+<!DOCTYPE html> <!-- 声明文档类型为 HTML5 -->
+<html lang="en"> <!-- 定义 HTML 文档，语言为英语 -->
+<head> <!-- 页面头部，包含元数据和引用资源 -->
+    <meta charset="UTF-8"> <!-- 设置字符编码为 UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口，适应不同设备屏幕 -->
+    <link rel="stylesheet" href="lounge.css"> <!-- 引入外部 CSS 样式表 -->
+    <title>Stanford Campus Life</title> <!-- 设置页面标题 -->
+</head>
+<body> <!-- 页面主体，包含可见内容 -->
+    <header> <!-- 页面头部区域 -->
+        <h1>Campus Life</h1> <!-- 一级标题，显示校园生活 -->
+        <p class="intro">Building a vibrant community of creative and accomplished people from around the world</p> <!-- 介绍段落，使用 intro 类 -->
+    </header>
+    <hr class="divider"> <!-- 水平分隔线，使用 divider 类 -->
+    <main> <!-- 页面主要内容区域 -->
+        <section class="card-grid"> <!-- 卡片网格区域，使用 card-grid 类 -->
+            <!-- 学生生活卡片 -->
+            <article class="campus-card"> <!-- 校园卡片元素，使用 campus-card 类 -->
+                <figure class="card-image"> <!-- 图片容器，使用 card-image 类 -->
+                    <!-- 学生宿舍和社交活动图片 -->
+                    <img src="../images/Campus-life-1.webp" alt="Student dormitory and social activities" 
+                         style="width: var(--card-width); height: var(--card-height);"> <!-- 图片元素，设置图片路径、替代文本和尺寸 -->
+                </figure>
+                <div class="card-content"> <!-- 卡片内容区域，使用 card-content 类 -->
+                    <h2>Student Life</h2> <!-- 二级标题，显示学生生活 -->
+                    <p>A residential campus with diverse housing, exceptional dining, and over 600 student organizations</p> <!-- 段落描述学生生活 -->
+                    <a href="#">Student Affairs &gt;</a> <!-- 链接，指向学生事务页面 -->
+                </div>
+            </article>
+
+            <!-- Arts & Culture Card -->
+            <article class="campus-card"> <!-- 校园卡片元素，使用 campus-card 类 -->
+                <figure class="card-image"> <!-- 图片容器，使用 card-image 类 -->
+                    <!-- 校园艺术展览图片 -->
+                    <img src="../images/Campus-life-2.webp" alt="Campus art exhibition" 
+                         style="width: var(--card-width); height: var(--card-height);"> <!-- 图片元素，设置图片路径、替代文本和尺寸 -->
+                </figure>
+                <div class="card-content"> <!-- 卡片内容区域，使用 card-content 类 -->
+                    <h2>Arts & Culture</h2> <!-- 二级标题，显示艺术与文化 -->
+                    <p>A rich tradition of fostering creativity and a vibrant arts district on campus</p> <!-- 段落描述艺术与文化 -->
+                    <a href="#">Stanford Arts &gt;</a> <!-- 链接，指向斯坦福艺术页面 -->
+                </div>
+            </article>
+
+            <!-- Recreation & Wellness Card -->
+            <article class="campus-card"> <!-- 校园卡片元素，使用 campus-card 类 -->
+                <figure class="card-image"> <!-- 图片容器，使用 card-image 类 -->
+                    <!-- 校园健身中心图片 -->
+                    <img src="../images/Campus-life-3.webp" alt="Campus fitness center" 
+                         style="width: var(--card-width); height: var(--card-height);"> <!-- 图片元素，设置图片路径、替代文本和尺寸 -->
+                </figure>
+                <div class="card-content"> <!-- 卡片内容区域，使用 card-content 类 -->
+                    <h2>Recreation & Wellness</h2> <!-- 二级标题，显示娱乐与健康 -->
+                    <p>State-of-the-art facilities and fitness programs to encourage movement and play</p> <!-- 段落描述娱乐与健康 -->
+                    <a href="#">Recreation & Wellness &gt;</a> <!-- 链接，指向娱乐与健康页面 -->
+                </div>
+            </article>
+        </section>
+        <!-- 更多校园生活链接 -->
+        <a href="#" style="display: inline-flex; align-items: center; gap: 5px; color: #333;">
+          More about campus life <!-- 链接文本 -->
+          <!-- 向右箭头图标 -->
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M5 12h14M12 5l7 7-7 7"/> <!-- 定义 SVG 路径 -->
+          </svg>
+        </a>
+    </main>
+</body>
+</html> <!-- 结束 HTML 文档 -->
