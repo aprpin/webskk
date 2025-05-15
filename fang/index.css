@@ -1,51 +1,4 @@
 /* 全局 body 样式设置，定义页面整体的字体、尺寸和布局 */
-body {
-  font-family: Arial, sans-serif; /* 设置页面主体字体为 Arial 或通用无衬线字体 */
-  line-height: 1.6; /* 设置行高为 1.6 倍，增强文本可读性 */
-  color: #333; /* 设置文本颜色为深灰色 */
-  width: 1600px; /* 设置 body 宽度为 1600px */
-  height: 800px; /* 设置 body 高度为 800px */
-  margin: 0 auto; /* 水平居中 body 元素 */
-  padding: 30px; /* 设置 body 内边距为 30px */
-  overflow: hidden; /* 隐藏溢出内容，防止出现滚动条 */
-  display: flex; /* 使用 flex 布局 */
-  flex-direction: column; /* 子元素垂直排列 */
-  align-items: center; /* 子元素水平居中 */
-}
-
-/* 增大 main 元素尺寸，设置其布局和样式 */
-/* 进一步增大最大宽度 */
-main {
-  max-width: 1600px; /* 设置 main 最大宽度为 1600px */
-  height: 800px; /* 设置 main 高度为 800px */
-  margin: 0 auto; /* 水平居中 main 元素 */
-  padding: var(--spacing-lg); /* 使用自定义变量设置内边距 */
-  box-sizing: border-box; /* 盒模型包含内边距和边框 */
-  overflow: hidden; /* 隐藏溢出内容 */
-  display: flex; /* 使用 flex 布局 */
-  justify-content: center; /* 子元素水平居中 */
-}
-
-/* 定义全局自定义变量，用于控制卡片相关的间距和尺寸 */
-/* 增大卡片相关变量的值 */
-:root {
-  --spacing-lg: 4rem; /* 定义大间距变量 */
-  --spacing-md: 3rem; /* 定义中等间距变量 */
-  --spacing-sm: 2rem; /* 定义小间距变量 */
-  --card-width: 600px; /* 定义卡片宽度变量 */
-  --card-height: 400px; /* 定义卡片高度变量 */
-}
-
-/* 设置一级标题样式 */
-/* 删除重复的h1定义，合并为一个 */
-h1 {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin: 2rem 0;
-  color: #8C1515;
-  text-align: center;
-}
-
 /* 修正body样式 */
 body {
   font-family: Arial, sans-serif;
@@ -59,6 +12,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* 增大 main 元素尺寸，设置其布局和样式 */
+/* 进一步增大最大宽度 */
+main {
+  max-width: 1600px; /* 设置 main 最大宽度为 1600px */
+  height: 800px; /* 设置 main 高度为 800px */
+  margin: 0 auto; /* 水平居中 main 元素 */
+  padding: var(--spacing-lg); /* 使用自定义变量设置内边距 */
+  box-sizing: border-box; /* 盒模型包含内边距和边框 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  display: flex; /* 使用 flex 布局 */
+  justify-content: center; /* 子元素水平居中 */
 }
 
 /* 调整主标题样式 */
@@ -92,8 +58,8 @@ h1 {
   --spacing-lg: 2rem; /* 重新定义大间距变量 */
   --spacing-md: 1.5rem; /* 重新定义中等间距变量 */
   --spacing-sm: 1rem; /* 重新定义小间距变量 */
-  --card-width: 385.82px; /* 重新定义卡片宽度变量 */
-  --card-height: 241.95px; /* 重新定义卡片高度变量 */
+  --card-width: 301px; /* 调整为301px宽度（301:201比例） */
+  --card-height: 201px; /* 调整为201px高度（301:201比例） */
 }
 
 /* 基础布局设置，调整 body 和 main 元素的宽度和布局 */
@@ -115,8 +81,9 @@ main {
   justify-content: center; /* 子元素水平居中 */
 }
 
-/* 图片容器样式设置，确保图片不被裁剪 */
-/* 图片容器 */
+
+
+/* 三张图片的设置 */
 .card-image {
   overflow: visible; /* 允许内容溢出容器 */
 }
@@ -128,21 +95,24 @@ main {
 
 /* 卡片网格系统样式设置，使用 flex 布局排列卡片 */
 /* 卡片网格系统 */
+/* 修改卡片容器布局 */
 section.card-grid {
-  display: flex; /* 使用 flex 布局 */
-  flex-wrap: nowrap; /* 防止卡片换行 */
-  grid-template-columns: initial; /* 移除网格列设置 */
-  gap: initial; /* 移除网格间距设置 */
+  display: flex;
+  flex-wrap: wrap;  /* 允许卡片换行 */
+  gap: 2rem; 
+  padding-bottom: 0; /* 移除滚动条预留空间 */
+  justify-content: center; /* 卡片居中排列 */
 }
 
-/* 卡片样式设置，控制卡片的尺寸和布局 */
-/* 卡片样式 */
+/* 校园卡片容器样式 */
 .campus-card {
-  flex-shrink: 0; /* 防止卡片收缩 */
-  width: var(--card-width); /* 使用自定义变量设置卡片宽度 */
-  margin: 0 var(--spacing-sm); /* 设置卡片左右外边距 */
-  display: flex; /* 使用 flex 布局 */
+  flex-shrink: 0;
+  width: var(--card-width);
+  margin: 0 var(--spacing-sm);
+  display: flex; /* 启用弹性布局 */
   flex-direction: column; /* 子元素垂直排列 */
+  padding: 0; /* 无内边距 */
+  position: relative; /* 为子元素的绝对定位创建基准 */
 }
 
 /* 再次设置图片容器样式，调整位置和尺寸 */
@@ -155,6 +125,9 @@ section.card-grid {
   position: relative; /* 设置相对定位 */
   overflow: visible; /* 允许内容溢出容器 */
   transform: translateY(-20px); /* 向上移动 20px */
+  
+  display: block; /* 恢复默认布局方式 */
+  justify-content: flex-start; /* 新增 */
 }
 
 /* 再次设置图片容器内图片的样式 */
@@ -168,19 +141,26 @@ section.card-grid {
 /* 卡片内容区域样式设置，调整文本位置和布局 */
 /* 内容区域 */
 .card-content {
-  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 0; /* 移除左侧内边距 */
-  margin-top: -40px; /* 向上移动 40px */
+  padding: var(--spacing-md) 0; /* 统一左右内边距为0 */
+  margin-top: -40px;
+  width: 100%; /* 继承父容器完整宽度 */
+  box-sizing: border-box; /* 新增：包含内边距 */
+  padding-left: 0; /* 强制左侧无内边距 */
   margin-left: 0; /* 移除左侧外边距 */
   width: calc(100% - var(--spacing-md)); /* 调整宽度，减去右侧内边距 */
   text-align: left; /* 文本左对齐 */
 }
 
 /* 设置卡片内容区域内标题样式 */
-.card-content h3 {
-  margin: 0 0 var(--spacing-sm) 0; /* 设置底部外边距 */
-  font-size: 1.5rem; /* 设置标题字体大小 */
-  color: #2d3748; /* 设置标题文本颜色 */
-  text-align: left; /* 标题文本左对齐 */
+.card-content h2 {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: 1.5rem;
+  color: #2d3748;
+  text-align: left;
+  white-space: nowrap;      /* 保持不换行 */
+  overflow: visible;        /* 允许内容溢出 */
+  text-overflow: clip;      /* 移除省略号 */
+  max-width: none;          /* 取消最大宽度限制 */
 }
 
 /* 设置卡片内容区域内段落样式 */
@@ -217,7 +197,7 @@ header p.intro {
 /* 假设 "More about campus life" 是页面底部的链接，让其居中 */
 a[href]:not([class]) {
   display: block; /* 转换为块级元素 */
-  text-align: center; /* 文本居中 */
+  
 }
 
 /* 定义卡片内容区域内文本左对齐 */
@@ -233,17 +213,31 @@ a[href]:not([class]) {
 
 /* 设置卡片内容区域内链接的基本样式 */
 .card-content a {
-  color: #007BFF; /* 链接颜色 */
-  text-decoration: none; /* 去除下划线 */
-  font-weight: bold; /* 字体加粗 */
-  transition: color 0.3s ease; /* 颜色过渡效果 */
+  color: #007BFF;
+  text-decoration: none;
+  /* 移除 font-weight: bold */
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
-/* 设置卡片内容区域内链接鼠标悬停时的样式 */
+/* 箭头单独设置 */
+.card-content a::after {
+  content: '>';
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
 /* 鼠标悬停时的样式 */
 .card-content a:hover {
-  color: #0056b3; /* 悬停时的链接颜色 */
-  text-decoration: underline; /* 显示下划线 */
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* 悬停时箭头动画 */
+.card-content a:hover::after {
+  transform: translateX(5px);
 }
 
 /* 新增防遮挡设置 */
@@ -253,78 +247,16 @@ a[href]:not([class]) {
   pointer-events: auto;
   opacity: 1;
   line-height: 1.5; /* 调整行高 */;
-  
-
 }
+/* 三张图片的设置结束 */
 
-
-/*有分隔符的部分*/
-
-/* 在卡片网格后添加统一间距 */
-section.card-grid + h2 {
-  margin-top: 4rem;  /* 新增：在卡片网格和二级标题之间添加间距 */
-}
-
-.schools-container {
-  margin-top: 2rem;  /* 新增：学院链接容器顶部间距 */
-  display: flex;  /* 使用 Flexbox 布局 */
-  flex-wrap: nowrap; /* 强制不换行 */
-  white-space: nowrap; /* 防止文本换行 */
-  padding: 10px 0;  /* 上下内边距 */
-  margin: 0 auto;  /* 居中对齐 */
-  max-width: 90%;  /* 新增最大宽度限制 */
-  justify-content: center;  /* 新增水平居中 */
-}
-
-.school-link, .separator {  /* 子元素样式 */
-  white-space: nowrap; /* 子元素强制不换行 */
-  display: inline-block; /* 保持行内布局 */
-}
-
-.separator {  /* 分隔符样式 */
-  color: #666;  /* 分隔符颜色 */
-  margin: 0 5px;  /* 分隔符左右间距 */
-  user-select: none;  /* 防止用户选择分隔符 */
-  margin: 0 15px;  /* 分隔符左右间距 */
-}
-
-.school-link {  /* 链接样式 */
-  color: rgb(0, 108, 184); /* 设置链接的默认文字颜色为蓝色 */
-  text-decoration: none; /* 移除链接的默认下划线 */
-  font-size: 16px; /* 设置链接的字体大小为16像素 */
-  font-weight: 500; /* 设置链接的字体粗细为中等 */
-  position: relative; /* 设置相对定位，用于伪元素的定位 */
-  padding-bottom: 2px; /* 在链接底部添加2像素的内边距，为下划线留出空间 */
-  transition: color 0.2s ease; /* 设置文字颜色的过渡效果，持续0.2秒，使用ease缓动函数 */
-}
- 
-.school-link:hover { /* 当鼠标悬停在链接上时 */
-  color:#005B94; /* Stanford's dark blue color */
-}
-
-.school-link::after { /* 伪元素，用于创建下划线效果 */
-  content: '';  /* 内容为空 */
-  position: absolute;  /* 绝对定位 */
-  width: 100%;  /* 宽度为100% */
-  height: 2px;  /* 高度为2像素 */
-  bottom: 0;  /* 底部对齐 */
-  left: 0;  /* 左对齐 */
-  background-color: #005B94;  /* 下划线颜色 */
-  transform: scaleX(0);  /* 初始状态下不显示下划线 */
-  transition: transform 0.2s ease;  /* 过渡效果，持续0.2秒，使用ease缓动函数 */
-}
-
-.school-link:hover::after { /* 当鼠标悬停在链接上时 */
-  transform: scaleX(1);  /* 显示下划线 */
-}
-/* 有分隔符的部分结束 */
 
 /* 红色按钮部分 */
 .red-block-button {
   display: inline-block;
   background-color: #b1040e;
   color: white;
-  padding: 12px 24px;
+  padding: 12px 60px;
   font-family: 'Source Sans Pro', Arial, sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -343,3 +275,44 @@ section.card-grid + h2 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 加深阴影 */
 }
 /* 红色按钮部分结束 */
+
+/* 修改body的overflow设置 */
+body {
+  overflow: auto;  /* 改为auto允许滚动 */
+  width: auto; 
+  height: auto;
+  min-height: 800px;
+}
+
+/* 修改main元素的overflow设置 */
+main {
+  overflow: visible;  /* 改为可见 */
+  height: auto;
+  min-height: 800px;
+}
+
+/* 调整卡片网格容器 */
+section.card-grid {
+  overflow: visible;  /* 确保内容可见 */
+  flex-wrap: wrap;
+  min-height: 400px;  /* 保证最小高度 */
+}
+
+/* 新增全屏图片样式 */
+.members-card {
+    width: 100vw;  /* 视口宽度 */
+    margin: 0;     /* 无外边距 */
+    padding: 0;    /* 无内边距 */
+    overflow: hidden;  /* 隐藏溢出内容 */
+    position: relative;  /* 相对定位 */
+    left: 50%;  /* 水平居中 */
+    transform: translateX(-50%);  /* 水平居中 */
+}
+
+.members-card img {
+    width: 1383px;  /* 或根据需要调整 */
+    height: 922px; /* 或根据需要调整 */
+    object-fit: cover;  /* 保持图片比例不变 */
+    display: block;  /* 确保图片是块级元素 */
+    margin: 0 auto;  /* 水平居中 */
+}
