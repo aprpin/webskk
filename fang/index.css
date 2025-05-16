@@ -1,17 +1,17 @@
 /* 全局 body 样式设置，定义页面整体的字体、尺寸和布局 */
 /* 修正body样式 */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
+  font-family: Arial, sans-serif; /* 设置字体为 Arial 或 sans-serif */
+  line-height: 1.6; /* 设置行高为 1.6 */
+  color: #333;  /* 设置文本颜色为深灰色 */
   max-width: 1600px; /* 改为最大宽度限制 */
   min-height: 800px; /* 改为最小高度 */
-  margin: 0 auto;
-  padding: 30px;
+  margin: 0 auto; /* 水平居中 */
+  padding: 30px;  /* 增加内边距 */
   width: auto; /* 自动宽度 */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex;  /* 使用 flex 布局 */
+  flex-direction: column; /* 垂直排列子元素 */
+  align-items: center;  /* 水平居中 */
 }
 
 /* 增大 main 元素尺寸，设置其布局和样式 */
@@ -29,11 +29,11 @@ main {
 
 /* 调整主标题样式 */
 h1 {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin: 2rem 0;
-  color: #8C1515;
-  text-align: center;
+  font-size: 3rem;  /* 设置标题字体大小为 3rem */
+  line-height: 1.2; /* 设置标题行高为 1.2 */
+  margin: 2rem 0; /* 设置标题上下外边距为 2rem */
+  color: black; /* 设置标题颜色为黑色 */;
+  text-align: center; /* 标题文本居中 */
   white-space: nowrap; /* 防止标题换行 */
   padding: 0 20px; /* 添加安全边距 */
 }
@@ -97,18 +97,18 @@ main {
 /* 卡片网格系统 */
 /* 修改卡片容器布局 */
 section.card-grid {
-  display: flex;
+  display: flex;  /* 使用 flex 布局 */
   flex-wrap: wrap;  /* 允许卡片换行 */
-  gap: 2rem; 
+  gap: 2rem;  /* 卡片之间的间距 */
   padding-bottom: 0; /* 移除滚动条预留空间 */
   justify-content: center; /* 卡片居中排列 */
 }
 
 /* 校园卡片容器样式 */
 .campus-card {
-  flex-shrink: 0;
-  width: var(--card-width);
-  margin: 0 var(--spacing-sm);
+  flex-shrink: 0; /* 禁止卡片缩小 */
+  width: var(--card-width);   /* 使用自定义变量设置宽度 */
+  margin: 0 var(--spacing-sm);  /* 左右外边距为小间距 */
   display: flex; /* 启用弹性布局 */
   flex-direction: column; /* 子元素垂直排列 */
   padding: 0; /* 无内边距 */
@@ -142,7 +142,7 @@ section.card-grid {
 /* 内容区域 */
 .card-content {
   padding: var(--spacing-md) 0; /* 统一左右内边距为0 */
-  margin-top: -40px;
+  margin-top: -40px;  /* 向上移动 40px */
   width: 100%; /* 继承父容器完整宽度 */
   box-sizing: border-box; /* 新增：包含内边距 */
   padding-left: 0; /* 强制左侧无内边距 */
@@ -154,9 +154,9 @@ section.card-grid {
 /* 设置卡片内容区域内标题样式 */
 .card-content h2 {
   margin: 0 0 var(--spacing-sm) 0;
-  font-size: 1.5rem;
-  color: #2d3748;
-  text-align: left;
+  font-size: 1.5rem;  /* 字体大小 */
+  color: #2d3748; /* 标题颜色 */
+  text-align: left; /* 标题左对齐 */
   white-space: nowrap;      /* 保持不换行 */
   overflow: visible;        /* 允许内容溢出 */
   text-overflow: clip;      /* 移除省略号 */
@@ -213,39 +213,39 @@ a[href]:not([class]) {
 
 /* 设置卡片内容区域内链接的基本样式 */
 .card-content a {
-  color: #007BFF;
-  text-decoration: none;
-  /* 移除 font-weight: bold */
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
+  color: #007BFF; /* 链接颜色 */
+  text-decoration: none;  /* 移除下划线 */
+  /* 移除 font-weight: bold */  /* 加粗 */
+  transition: all 0.3s ease;  /* 过渡效果 */
+  display: inline-flex;    /* 内联块元素 */  
+  align-items: center;     /* 垂直居中 */
 }
 
 /* 箭头单独设置 */
 .card-content a::after {
-  content: '>';
-  display: inline-block;
-  margin-left: 5px;
-  transition: transform 0.3s ease;
+  content: '>'; /* 箭头内容 */
+  display: inline-block;  /* 内联块元素 */
+  margin-left: 5px;  /* 箭头与文本之间的间距 */
+  transition: transform 0.3s ease;  /* 过渡效果 */
 }
 
 /* 鼠标悬停时的样式 */
 .card-content a:hover {
-  color: #0056b3;
-  text-decoration: underline;
+  color: #0056b3;   /* 悬停时的颜色 */
+  text-decoration: underline;  /* 悬停时添加下划线 */
 }
 
 /* 悬停时箭头动画 */
 .card-content a:hover::after {
-  transform: translateX(5px);
+  transform: translateX(5px);  /* 向右移动箭头 */
 }
 
 /* 新增防遮挡设置 */
 .aaa {
-  position: relative;
-  z-index: 9999;
-  pointer-events: auto;
-  opacity: 1;
+  position: relative;  /* 相对定位 */
+  z-index: 9999;  /* 确保在其他元素之上 */
+  pointer-events: auto;  /* 允许点击 */
+  opacity: 1;  /* 不透明 */
   line-height: 1.5; /* 调整行高 */;
 }
 /* 三张图片的设置结束 */
@@ -253,20 +253,20 @@ a[href]:not([class]) {
 
 /* 红色按钮部分 */
 .red-block-button {
-  display: inline-block;
-  background-color: #b1040e;
-  color: white;
-  padding: 12px 60px;
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  display: inline-block;  /* 内联块元素 */
+  background-color: #b1040e;  /* 红色 */
+  color: white;  /* 白色文字 */
+  padding: 12px 60px;  /* 内边距 */
+  font-family: 'Source Sans Pro', Arial, sans-serif;  /* 字体 */
+  font-weight: 600;  /* 字体粗细 */
+  font-size: 16px;  /* 字体大小 */
+  line-height: 1.5;  /* 行高 */
+  letter-spacing: 0.05em;  /* 字母间距 */
+  text-decoration: none;  /* 移除下划线 */
+  border: none;   /* 移除边框 */
+  cursor: pointer;    /* 鼠标指针 */
+  transition: background-color 0.3s;  /* 过渡效果 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);  /* 阴影 */
 }
 
 /* 鼠标悬停效果 */
@@ -279,22 +279,22 @@ a[href]:not([class]) {
 /* 修改body的overflow设置 */
 body {
   overflow: auto;  /* 改为auto允许滚动 */
-  width: auto; 
-  height: auto;
-  min-height: 800px;
+  width: auto;  /* 宽度自动 */
+  height: auto;  /* 高度自动 */
+  min-height: 800px;  /* 最小高度 */
 }
 
 /* 修改main元素的overflow设置 */
 main {
   overflow: visible;  /* 改为可见 */
-  height: auto;
-  min-height: 800px;
+  height: auto;  /* 高度自动 */
+  min-height: 800px;  /* 最小高度 */
 }
 
 /* 调整卡片网格容器 */
 section.card-grid {
   overflow: visible;  /* 确保内容可见 */
-  flex-wrap: wrap;
+  flex-wrap: wrap;  /* 允许卡片换行 */
   min-height: 400px;  /* 保证最小高度 */
 }
 
@@ -303,16 +303,13 @@ section.card-grid {
     width: 100vw;  /* 视口宽度 */
     margin: 0;     /* 无外边距 */
     padding: 0;    /* 无内边距 */
-    overflow: hidden;  /* 隐藏溢出内容 */
-    position: relative;  /* 相对定位 */
-    left: 50%;  /* 水平居中 */
-    transform: translateX(-50%);  /* 水平居中 */
+    overflow: hidden; /* 隐藏溢出内容 */
 }
 
 .members-card img {
-    width: 1383px;  /* 或根据需要调整 */
-    height: 922px; /* 或根据需要调整 */
-    object-fit: cover;  /* 保持图片比例不变 */
-    display: block;  /* 确保图片是块级元素 */
-    margin: 0 auto;  /* 水平居中 */
+    width: 100%;   /* 图片宽度占满父元素 */
+    height: auto;  /* 保持图片原始宽高比 */
+    display: block; /* 转换为块级元素，移除底部间隙 */
+    margin: 0;     /* 无外边距 */
+    padding: 0;    /* 无内边距 */
 }
