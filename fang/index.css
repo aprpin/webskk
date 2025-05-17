@@ -313,3 +313,94 @@ section.card-grid {
     margin: 0;     /* 无外边距 */
     padding: 0;    /* 无内边距 */
 }
+
+/* 图片容器样式 */
+.image-container {
+    position: relative; /* 为子元素的绝对定位创建基准 */
+}
+
+/* 新增虚化背景样式 */
+.blur-background {
+    /* 加大 filter 的模糊程度 */
+    filter: blur(20px); 
+    /* 添加 backdrop-filter 增强模糊效果 */
+    backdrop-filter: blur(20px); 
+    /* 使用 clip-path 确保边界清晰，这里使用矩形裁剪 */
+    clip-path: inset(0); 
+    /* 添加过渡效果，让虚化更平滑 */
+    transition: all 0.3s ease; 
+}
+
+/* 新增覆盖内容样式 */
+.overlay-content {
+    position: absolute; /* 相对于图片容器绝对定位 */
+    top: 50%; /* 垂直居中 */
+    left: 50%;  /* 水平居中 */
+    transform: translate(-50%, -50%); /* 居中对齐 */
+    background: transparent;  /* 透明背景 */
+    padding: 20px;  /* 内边距 */
+    border-radius: 10px;  /* 圆角 */
+    z-index: 1; /* 确保在图片之上 */
+    display: none;  /* 默认隐藏 */
+    color: white; /* 设置字体颜色为白色 */
+    text-align: center; /* 文本水平居中 */
+    display: flex; /* 使用 flex 布局 */
+    flex-direction: column; /* 子元素垂直排列 */
+    align-items: center; /* 子元素水平居中 */
+    justify-content: center; /* 子元素垂直居中 */
+}
+
+/* 将 yan-card 类的图片设置为圆形 */
+.overlay-content .yan-card {
+    border-radius: 50%; /* 将边框半径设置为 50%，使图片变成圆形 */
+    object-fit: cover; /* 确保图片覆盖整个圆形区域，避免变形 */
+    width: 240px; /* 可根据实际情况调整宽度 */
+    height: 240px; /* 可根据实际情况调整高度，与宽度保持一致 */
+}
+
+/* 设置 overlay-content 内的标题字体颜色 */
+.overlay-content h3 {
+    color: white; /* 设置标题颜色为白色 */
+}
+
+/* 设置 overlay-content 内的链接字体颜色 */
+.overlay-content a {
+    color: white; /* 设置链接颜色为白色 */
+}
+
+/* 设置 more-link 类的基本样式 */
+.more-link {
+    color: white; /* 链接颜色设置为白色 */
+    text-decoration: none;  /* 移除下划线 */
+    transition: all 0.3s ease;  /* 过渡效果 */
+    display: inline-flex;    /* 内联块元素 */  
+    align-items: center;     /* 垂直居中 */
+}
+
+/* 为 more-link 类的链接添加箭头 */
+.more-link::after {
+    content: '>'; /* 箭头内容 */
+    display: inline-block;  /* 内联块元素 */
+    margin-left: 5px;  /* 箭头与文本之间的间距 */
+    transition: transform 0.3s ease;  /* 过渡效果 */
+    color: white; /* 箭头颜色设置为白色 */
+}
+
+/* 鼠标悬停时 more-link 类链接的样式 */
+.more-link:hover {
+    color: white;   /* 悬停时的颜色 */
+    text-decoration: underline;  /* 悬停时添加下划线 */
+}
+
+/* 悬停时 more-link 类链接箭头的动画 */
+.more-link:hover::after {
+    transform: translateX(5px);  /* 向右移动箭头 */
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+
+
+

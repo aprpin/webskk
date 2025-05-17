@@ -93,25 +93,56 @@
   <!-- 新增两个空行，用于增加页面间距 -->
   <br><br>
 
-  <article>
-      <!-- 介绍的背景图，使用 members-card 类 -->
-      <img src="images/yannie-banner.webp" alt="介绍的背景图" class="members-card">
-      <!-- yan 大头照，使用 yan-card 类 -->
-      <img src="images/yannie-240x240.webp" alt="yan大头照" class="yan-card">
-      <!-- 引用 Yannie Tan 的话语 -->
-      <p>
-          “I think about all the projects that students throw themselves
-           at quarter after quarter, just really expanding and stretching their minds.
-           … Stanford allows you to experience evolutions of yourself.”
-      </p>
-      <!-- 引用内容的归属信息 -->
-      <div class="attribution">
-          <!-- 引用者姓名 -->
-          <h3>Yannie Tan</h3>
-          <!-- 引用者所属班级 -->
-          <p>Class of 2024</p>
-      </div>
-      <!-- 当前选中的链接，点击可能跳转到更多内容页面 -->
-      <a href="#">More</a> 
-  </article>
-</body>
+  <!-- 隐藏的锚点 -->
+  <a href="#show-overlay" id="trigger-link" style="display: none;"></a>
+  
+  <!-- 图片部分 -->
+  <!-- 图片容器 -->
+  <div class="image-container">
+      <img src="images/yannie-banner.webp" alt="介绍的背景图" class="members-card" id="target-image">
+      <article class="overlay-content">
+          <!-- yan 大头照，使用 yan-card 类 -->
+          <img src="images/yannie-240x240.webp" alt="yan大头照" class="yan-card">
+          <!-- 引用 Yannie Tan 的话语 -->
+          <p>
+              “I think about all the projects that students throw themselves
+               at quarter after quarter, just really expanding and stretching their minds.
+               … Stanford allows you to experience evolutions of yourself.”
+          </p>
+          <!-- 引用内容的归属信息 -->
+          <div class="attribution">
+              <!-- 引用者姓名 -->
+              <h3>Yannie Tan</h3>
+              <!-- 引用者所属班级，添加 class -->
+              <p class="italic-text">Class of 2024</p>
+          </div>
+          <!-- 给链接添加类名 more-link -->
+          <a href="#" class="more-link">More</a> 
+      </article>
+  </div>
+  
+  <!-- 触发显示的链接 -->
+   
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const targetImage = document.getElementById('target-image'); 
+        const overlayContent = document.querySelector('.overlay-content');
+
+        // 给图片元素添加过渡样式
+        targetImage.style.transition = 'all 0.3s ease';
+
+        window.addEventListener('scroll', () => {
+            const rect = targetImage.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) {
+                targetImage.classList.add('blur-background');
+                overlayContent.style.display = 'block';
+            } else {
+                targetImage.classList.remove('blur-background');
+                overlayContent.style.display = 'none';
+            }
+        });
+    });
+</script>
+  </body>
