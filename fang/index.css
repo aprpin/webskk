@@ -317,18 +317,19 @@ section.card-grid {
 /* 图片容器样式 */
 .image-container {
     position: relative; /* 为子元素的绝对定位创建基准 */
+    background-color: #544948;  /* 背景颜色 */
 }
 
 /* 新增虚化背景样式 */
 .blur-background {
-    /* 加大 filter 的模糊程度 */
-    filter: blur(20px); 
-    /* 添加 backdrop-filter 增强模糊效果 */
-    backdrop-filter: blur(20px); 
-    /* 使用 clip-path 确保边界清晰，这里使用矩形裁剪 */
-    clip-path: inset(0); 
-    /* 添加过渡效果，让虚化更平滑 */
-    transition: all 0.3s ease; 
+    /* 将模糊半径调整为 20px */
+    filter: blur(15px); 
+    /* 将模糊半径调整为 20px */
+    backdrop-filter: blur(15px);  /* 模糊效果 */
+    opacity: 1;  /* 不透明 */
+    clip-path: inset(0);  /* 裁剪路径 */
+    text-shadow: 1px 1px 6px #000;  /* 文字阴影 */
+    transition: all 0.3s ease;  /* 过渡效果 */
 }
 
 /* 新增覆盖内容样式 */
@@ -368,39 +369,36 @@ section.card-grid {
     color: white; /* 设置链接颜色为白色 */
 }
 
-/* 设置 more-link 类的基本样式 */
-.more-link {
-    color: white; /* 链接颜色设置为白色 */
-    text-decoration: none;  /* 移除下划线 */
-    transition: all 0.3s ease;  /* 过渡效果 */
-    display: inline-flex;    /* 内联块元素 */  
-    align-items: center;     /* 垂直居中 */
+.more-link{
+  color: #007BFF; /* 链接颜色 */
+  text-decoration: none;  /* 移除下划线 */
+  /* 移除 font-weight: bold */  /* 加粗 */
+  transition: all 0.3s ease;  /* 过渡效果 */
+  display: inline-flex;    /* 内联块元素 */  
+  align-items: center;     /* 垂直居中 */
 }
 
-/* 为 more-link 类的链接添加箭头 */
+/* 箭头单独设置 */
 .more-link::after {
-    content: '>'; /* 箭头内容 */
-    display: inline-block;  /* 内联块元素 */
-    margin-left: 5px;  /* 箭头与文本之间的间距 */
-    transition: transform 0.3s ease;  /* 过渡效果 */
-    color: white; /* 箭头颜色设置为白色 */
+  content: '>'; /* 箭头内容 */
+  display: inline-block;  /* 内联块元素 */
+  margin-left: 5px;  /* 箭头与文本之间的间距 */
+  transition: transform 0.3s ease;  /* 过渡效果 */
 }
 
-/* 鼠标悬停时 more-link 类链接的样式 */
+/* 鼠标悬停时的样式 */
 .more-link:hover {
-    color: white;   /* 悬停时的颜色 */
-    text-decoration: underline;  /* 悬停时添加下划线 */
+  text-decoration: underline;  /* 悬停时添加下划线 */
 }
 
-/* 悬停时 more-link 类链接箭头的动画 */
+/* 悬停时箭头动画 */
 .more-link:hover::after {
-    transform: translateX(5px);  /* 向右移动箭头 */
+  transform: translateX(5px);  /* 向右移动箭头 */
 }
 
 .italic-text {
     font-style: italic;
 }
-
 
 
 
