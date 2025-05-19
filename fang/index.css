@@ -327,7 +327,7 @@ section.card-grid {
     /* 将模糊半径调整为 20px */
     backdrop-filter: blur(15px);  /* 模糊效果 */
     opacity: 1;  /* 不透明 */
-    clip-path: inset(0);  /* 裁剪路径 */
+    clip-path: inset(10);  /* 裁剪路径 */
     text-shadow: 1px 1px 6px #000;  /* 文字阴影 */
     transition: all 0.3s ease;  /* 过渡效果 */
 }
