@@ -1,0 +1,66 @@
+/*有分隔符的部分*/
+/* 在卡片网格后添加统一间距 */
+section.card-grid + h2 {
+  margin-top: 4rem;  /* 新增：在卡片网格和二级标题之间添加间距 */
+}
+
+/* === 学院链接样式 === */
+/* 包含七个学院的水平导航链接样式 */
+.schools-container {
+  margin-top: 2rem;  /* 容器顶部间距 */
+  display: flex;     /* 弹性布局实现水平排列 */
+  flex-wrap: nowrap; /* 禁止换行 */
+  white-space: nowrap; /* 防止内部文本换行 */
+  padding: 10px 0;   /* 上下内边距 */
+  margin: 0 auto;    /* 水平居中 */
+  max-width: 90%;    /* 最大宽度限制防止溢出 */
+  justify-content: center; /* 内容水平居中 */
+}
+
+/* 链接与分隔符基础样式 */
+.school-link, .separator {
+  white-space: nowrap; /* 强制内容不换行 */
+  display: inline-block; /* 行内块级显示 */
+}
+
+/* 竖线分隔符样式 */
+.separator {
+  color: #666;       /* 浅灰色分隔符 */
+  margin: 0 15px;    /* 左右15px间距 */
+  user-select: none;  /* 禁止用户选择文本 */
+}
+
+/* 学院链接交互样式 */
+.school-link {
+  color: rgb(0, 108, 184); /* 斯坦福标志蓝色 */
+  text-decoration: none;    /* 移除下划线 */
+  font-size: 16px;          /* 标准字体大小 */
+  font-weight: 500;         /* 中等字重 */
+  position: relative;       /* 为下划线定位做准备 */
+  padding-bottom: 2px;      /* 为下划线留出空间 */
+  transition: color 0.2s ease; /* 颜色过渡动画 */
+}
+
+/* 鼠标悬停状态 */
+.school-link:hover {
+  color:#005B94; /* 更深的品牌蓝色 */
+}
+
+/* 下划线动画效果 */
+.school-link::after {
+  content: '';             /* 伪元素必需属性 */
+  position: absolute;      /* 绝对定位 */
+  width: 100%;             /* 与链接同宽 */
+  height: 2px;             /* 下划线高度 */
+  bottom: 0;               /* 底部对齐 */
+  left: 0;                 /* 左侧对齐 */
+  background-color: #005B94; /* 下划线颜色 */
+  transform: scaleX(0);    /* 初始状态隐藏 */
+  transition: transform 0.2s ease; /* 缩放动画 */
+}
+
+/* 悬停时显示下划线 */
+.school-link:hover::after {
+  transform: scaleX(1);    /* 完全显示下划线 */
+}
+/* 有分隔符的部分结束 */
