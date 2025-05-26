@@ -1,0 +1,445 @@
+/* 
+ * 基础样式重置
+ * 以下代码会对所有元素生效，将所有元素的外边距、内边距重置为 0，
+ * 并将盒模型设置为 border-box，让元素的宽度和高度包含内边距和边框，
+ * 同时设置默认字体为 Arial 或无衬线字体，确保页面在不同浏览器中的一致性。
+ */
+* {
+  margin: 0; /* 重置所有元素的外边距为 0，消除默认的外部间距 */
+  padding: 0; /* 重置所有元素的内边距为 0，消除默认的内部间距 */
+  box-sizing: border-box; /* 设置盒模型为 border-box，使元素的宽度和高度包含内边距和边框 */
+  font-family: Arial, sans-serif; /* 设置默认字体为 Arial，如果 Arial 不可用，则使用无衬线字体 */
+}
+
+/* 
+ * 容器类样式
+ * 该类用于创建一个宽度受限的容器，使其在页面中居中显示，
+ * 并在两侧添加内边距，避免内容紧贴页面边缘，增强页面的美观性。
+ */
+.container {
+  max-width: 1200px; /* 设置容器的最大宽度为 1200px，防止容器在大屏幕上过宽 */
+  margin: 0 auto; /* 使容器在水平方向上居中，左右外边距自动分配 */
+  padding: 0 20px; /* 在容器的左右两侧添加 20px 的内边距，避免内容紧贴容器边缘 */
+}
+
+/* 
+ * 顶部信息导航栏样式
+ * 定义顶部信息导航栏的背景颜色、内边距和底部边框样式，
+ * 用于展示一些辅助信息和导航链接。
+ */
+.info-nav {
+  background-color: rgba(255, 255, 255,0); /* 关键：白色80%透明度 */
+  padding: 10px 0; /* 在导航栏的上下添加 10px 的内边距 */
+ 
+}
+
+/* 顶部信息导航栏内的容器样式 */
+.info-nav .container {
+  display: flex; /* 使用 Flexbox 布局，方便元素的排列和对齐 */
+  align-items: center; /* 让元素在垂直方向上居中对齐 */
+  justify-content: flex-end; /* 让元素右对齐，将导航内容放置在右侧 */
+}
+
+/* 顶部信息导航栏内的信息组样式 */
+.info-nav .info-group {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 让元素在垂直方向上居中对齐 */
+}
+
+/* 顶部信息导航栏内的导航链接容器样式 */
+.info-nav .nav-links {
+  display: flex; /* 使用 Flexbox 布局 */
+  gap: 20px; /* 设置导航链接之间的间距为 20px */
+}
+
+/* 顶部信息导航栏内的搜索框样式 */
+.info-nav .search {
+  margin-left: 20px; /* 给搜索框添加左边距，控制和左侧元素的间距 */
+}
+
+/* 
+ * 顶部信息导航栏链接样式
+ * 去除链接的下划线，设置链接的颜色和字体大小，
+ * 使导航链接更加美观和易读。
+ */
+.info-nav a {
+  text-decoration: none; /* 去除链接的下划线，使链接看起来更简洁 */
+  color: white; /* 设置链接的颜色为白色 */
+  font-size: 0.9em; /* 设置链接的字体大小为父元素字体大小的 0.9 倍 */
+}
+
+/* 
+ * 搜索框样式
+ * 将搜索框靠右对齐，使其在导航栏中处于合适的位置。
+ */
+.search {
+  margin-left: auto; /* 将搜索框推到右侧，利用剩余空间 */
+}
+
+/* 
+ *  logo 样式
+ * 设置 logo 的颜色和字体大小，并在右侧添加间距，
+ * 使 logo 在页面中突出显示。
+ */
+.logo {
+  font-size: 24px; /* 设置 Logo 的字体大小为 24px */
+  font-weight: bold; /* 设置 Logo 的字体粗细为粗体 */
+  color: #ffffff; /* 设置 Logo 的颜色为 Stanford 红色 */
+  text-decoration: none; /* 去除 Logo 的下划线 */
+  white-space: nowrap; /* 防止 Logo 文字换行 */
+}
+
+/* ===== 透明导航栏核心代码 ===== */
+.logo-nav-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: rgba(255, 255, 255,0); /* 关键：白色80%透明度 */
+    backdrop-filter: blur(5px); /* 毛玻璃效果（可选） */
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 底部细边框（可选） */
+}
+
+/* 信息导航栏容器 */
+.info-nav {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 让元素在垂直方向上居中对齐 */
+}
+
+/* 容器内边距 */
+.info-nav .container {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 让元素在垂直方向上居中对齐 */
+}
+
+/* 主导航栏（下方菜单） */
+.main-nav {
+    position: absolute;
+    top: 50px; /* 根据logo-nav-container高度调整 */
+    left: 0;
+    right: 0;
+    padding: 10px 5%;
+    background-color: rgba(255, 255, 255, 0); /* 透明度略低于顶部 */
+    backdrop-filter: blur(5px);
+    z-index: 99;
+}
+
+/* 主导航菜单内容器样式 */
+.main-nav .container {
+  display: flex; /* 使用 Flexbox 布局 */
+  justify-content: center; /* 让元素在水平方向上居中对齐 */
+}
+
+/* 
+ * 主导航菜单链接样式
+ * 设置主导航菜单链接的外边距、字体大小、颜色、文本装饰和字体粗细，
+ * 使主导航菜单链接在页面中醒目显示，并添加悬停效果。
+ */
+.menu a {
+  margin: 0 15px; /* 在主导航菜单链接的左右添加 15px 的外边距 */
+  font-size: 16px; /* 设置主导航菜单链接的字体大小为 16px */
+  color: white; /* 设置主导航菜单链接的颜色为白色 */
+  text-decoration: none; /* 去除主导航菜单链接的下划线 */
+  font-weight: bold; /* 设置主导航菜单链接的字体粗细为粗体 */
+  position: relative; /* 相对定位，用于下划线 */
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  left: 50%; /* 从中间开始 */
+  right: 50%; /* 从中间开始 */
+  bottom: -2px; /* 下划线位置 */
+  height: 2px; /* 下划线高度 */
+  background-color: #ffffff; /* 下划线颜色 */
+  transition: all 0.3s ease; /* 动画效果 */
+}
+
+.menu a:hover::after {
+  left: 0; /* 扩展到左边 */
+  right: 0; /* 扩展到右边 */
+}
+
+/* 主导航菜单链接悬停样式 */
+
+
+/* 
+ * 主标题区域
+ * 绝对定位，将主标题区域放置在导航栏下方，
+ * 设置文本对齐方式、颜色和层级，确保在页面中突出显示。
+ */
+.hero {
+  position: relative; /* 相对定位，确保子元素可以绝对定位 */
+  top: 20px; /* 根据导航高度调整 */
+  left: 0;
+  right: 0;
+  text-align: center; /* 将主标题区域内的文本居中对齐 */
+  color: white; /* 设置主标题区域内的文本颜色为白色 */
+  z-index: 98; /* 设置层级，确保在页面中突出显示 */
+}
+
+/* 
+ * 主标题样式
+ * 设置主标题的字体大小、底部外边距和文字阴影，
+ * 使主标题更加醒目，并将其居中显示在整个网页。
+ */
+.container h1 {
+  font-size: 72px; /* 设置主标题的字体大小为 72px */
+  margin-bottom: 20px; /* 在主标题底部添加 20px 的外边距 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影，增强立体感 */
+  position: absolute; /* 绝对定位 */
+  top: 500%; /* 距离顶部 50% */
+  left: 50%; /* 距离左侧 50% */
+  transform: translate(-50%, -50%); /* 精确居中 */
+  width: 100%; /* 确保标题占据整个宽度 */
+  text-align: center; /* 将标题文本居中对齐 */
+}
+
+
+
+/* 探索框内标题样式 */
+.explore-box h2 {
+  background-color: rgb(177,4,14);  /* 设置探索框的背景颜色为 Stanford 红色 */
+  color: white; /* 设置探索框内标题的颜色为白色 */
+  margin:0; /* 重置探索框内标题的外边距为 0 */
+
+}
+
+/* 
+ * 基础重置
+ * 再次对 body 元素进行样式重置，确保页面的基础样式统一。
+ */
+body {
+  margin: 0; /* 重置 body 元素的外边距为 0 */
+  padding: 0; /* 重置 body 元素的内边距为 0 */
+  font-family: Arial, sans-serif; /* 设置 body 元素的默认字体为 Arial 或无衬线字体 */
+}
+
+/* 页面容器样式 */
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* 背景图片和渐变阴影 */
+.background-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.background-image-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 调整高度，例如让阴影覆盖顶部 30% 的区域 */
+    height: 30%; 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+/* Logo 和导航栏容器 - 移除背景颜色 */
+.logo-nav-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    /* 移除背景颜色 */
+    /* background-color: rgba(255, 255, 255, 0.8); */ 
+    backdrop-filter: none; /* 移除毛玻璃效果 */
+    z-index: 100;
+    border-bottom: none; /* 移除底部边框 */
+}
+
+/* 主导航栏（下方菜单） - 移除背景颜色 */
+.main-nav {
+    position: absolute;
+    top: 50px; /* 根据logo-nav-container高度调整 */
+    left: 0;
+    right: 0;
+    padding: 10px 5%;
+    /* 移除背景颜色 */
+    /* background-color: rgba(255, 255, 255, 0.7); */ 
+    backdrop-filter: none; /* 移除毛玻璃效果 */
+    z-index: 99;
+}
+
+/* 主导航菜单内容器样式 */
+.main-nav .container {
+  display: flex; /* 使用 Flexbox 布局 */
+  justify-content: center; /* 让元素在水平方向上居中对齐 */
+}
+
+/* 
+ * 主导航菜单链接样式
+ * 设置主导航菜单链接的外边距、字体大小、颜色、文本装饰和字体粗细，
+ * 使主导航菜单链接在页面中醒目显示，并添加悬停效果。
+ */
+.menu a {
+  margin: 0 15px; /* 在主导航菜单链接的左右添加 15px 的外边距 */
+  font-size: 16px; /* 设置主导航菜单链接的字体大小为 16px */
+  color: #333; /* 设置主导航菜单链接的颜色为深灰色 */
+  text-decoration: none; /* 去除主导航菜单链接的下划线 */
+  font-weight: bold; /* 设置主导航菜单链接的字体粗细为粗体 */
+}
+
+/* 主导航菜单链接悬停样式 */
+.menu a:hover {
+  color: #ffffff; /* 设置悬停时主导航菜单链接的颜色为 Stanford 红色 */
+}
+
+/* 
+ * 主标题区域
+ * 绝对定位，将主标题区域放置在导航栏下方，
+ * 设置文本对齐方式、颜色和层级，确保在页面中突出显示。
+ */
+.hero {
+  position: absolute; /* 绝对定位，将主标题区域放置在导航栏下方 */
+  top: 350px; /* 根据导航高度调整 */
+  left: 0;
+  right: 0;
+  text-align: center; /* 将主标题区域内的文本居中对齐 */
+  color: white; /* 设置主标题区域内的文本颜色为白色 */
+  z-index: 98; /* 设置层级，确保在页面中突出显示 */
+}
+
+/* 
+ * 主标题样式
+ * 设置主标题的字体大小、底部外边距和文字阴影，
+ * 使主标题更加醒目。
+ */
+.hero h1 {
+  font-size: 72px; /* 设置主标题的字体大小为 72px */
+  margin-bottom: 10px; /* 在主标题底部添加 20px 的外边距 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影，增强立体感 */
+}
+
+/* 探索框样式 */
+.explore-box {
+  background-color: rgb(177,4,14);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  /* 修改定位方式 */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  /* 移除原有定位属性 */
+  /* top: 1000px; */
+  /* width: 1300px; */
+  /* margin: 0 auto; */
+}
+  
+
+.explore-box h2 {
+  display: inline-flex; /* 保持原有布局 */
+  align-items: center;
+  justify-content: center; /* 新增水平居中 */
+  width: auto; /* 宽度自适应 */
+  margin: 10 auto; /* 水平居中 */
+  padding: 5px 30px; /* 保持原有内边距 */
+}
+
+.explore-box h2::after {
+  /* 修改为类似倒 V 的符号 */
+  content: "∨"; 
+  /* 或者使用 Unicode 编码 */
+  /* content: "\2228"; */ 
+  margin-left: 8px; /* 在箭头和文字之间添加一些间距 */
+  font-size: 0.8em; /* 调整箭头的字体大小 */
+}
+
+/* 
+ * 基础重置
+ * 再次对 body 元素进行样式重置，确保页面的基础样式统一。
+ */
+body {
+  margin: 0; /* 重置 body 元素的外边距为 0 */
+  padding: 0; /* 重置 body 元素的内边距为 0 */
+  font-family: Arial, sans-serif; /* 设置 body 元素的默认字体为 Arial 或无衬线字体 */
+}
+
+/* 
+ * 导航链接样式
+ * 设置导航链接的外边距、字体大小、颜色和文本装饰，
+ * 使导航链接在页面中美观显示，并添加悬停效果。
+ */
+.nav-links a {
+  margin: 0 8px; /* 在导航链接的左右添加 8px 的外边距 */
+  font-size: 14px; /* 设置导航链接的字体大小为 14px */
+  color: #ffffff; /* 设置导航链接的颜色为深灰色 */
+  text-decoration: none; /* 去除导航链接的下划线 */
+  white-space: nowrap; /* 防止导航链接文字换行 */
+  position: relative; /* 相对定位，用于上滑线 */
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  left: 50%; /* 从中间开始 */
+  right: 50%; /* 从中间开始 */
+  top: -2px; /* 上滑线位置 */
+  height: 2px; /* 上滑线高度 */
+  background-color: #ffffff; /* 上滑线颜色 */
+  transition: all 0.3s ease; /* 动画效果 */
+}
+
+.nav-links a:hover::before {
+  left: 0; /* 扩展到左边 */
+  right: 0; /* 扩展到右边 */
+}
+
+.menu a {
+  margin: 0 15px; /* 在主导航菜单链接的左右添加 15px 的外边距 */
+  font-size: 16px; /* 设置主导航菜单链接的字体大小为 16px */
+  color: white; /* 设置主导航菜单链接的颜色为白色 */
+  text-decoration: none; /* 去除主导航菜单链接的下划线 */
+  font-weight: bold; /* 设置主导航菜单链接的字体粗细为粗体 */
+  position: relative; /* 相对定位，用于下划线 */
+}
+
+.search a {
+  font-size: 16px; /* 设置搜索图标的字体大小为 14px */
+  color: white; /* 设置搜索图标的颜色为白色 */
+  text-decoration: none; /* 去除搜索图标的下划线 */
+  white-space: nowrap; /* 防止搜索图标文字换行 */
+  padding: 16px 30px; /* 添加内边距 */
+  transition: background-color 0.3s ease; /* 添加过渡效果 */
+}
+
+.search a:hover {
+  color: #ffffff; /* 设置悬停时搜索图标的颜色为白色 */
+  background-color: #8C1515; /* 设置悬停时背景颜色为 Stanford 红色 */
+}
+
+/* 搜索图标悬停样式 */
+.search a:hover {
+  color: #ffffff; /* 设置悬停时搜索图标的颜色为 Stanford 红色 */
+}
+
+.info-group p {
+  color: white; /* 设置字体颜色为白色 */
+  margin-right: 10px; /* 保持与右侧元素的间距 */
+}
