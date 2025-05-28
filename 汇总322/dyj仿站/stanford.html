@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Portal</title>
+    <!-- 新增字体引入 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&family=Source+Serif+Pro:wght@400;600&display=swap">
+    <link rel="stylesheet" href="stanford.css">
+</head>
+<body>
+    <!-- 新增图片容器 --> 
+    <div class="image-container"> 
+        <img src="images\20250320_Renee_Zhao-5.webp" alt="介绍的背景图" class="members-card" id="target-image"> 
+        <article class="overlay-content"> 
+            <!-- yan 大头照，使用 yan-card 类 --> 
+            <img src="images\Renee_Zhao-sqr-240x240.jpg" alt="Renee大头照" class="yan-card"> 
+            <!-- 引用 Yannie Tan 的话语 --> 
+            <p> 
+                “The truly impactful technologies are always based on the condition that you can freely explore.”
+            </p> 
+            <!-- 引用内容的归属信息 --> 
+            <div class="attribution"> 
+                <!-- 引用者姓名 --> 
+                <h3>Renee Zhao</h3> 
+                <!-- 引用者所属班级，添加 class --> 
+                <p class="italic-text">Assistant Professor of Mechanical Engineering</p> 
+            </div> 
+            <!-- 给链接添加类名 more-link --> 
+            <a href="#" class="more-link">More</a> 
+        </article> 
+    </div>
+    <div class="aaa">
+        <h2>Research</h2>
+        <p>Driving discoveries vital to our world, our health, and our<br>intellectual life</p>
+    </div>
+    <!-- 下方分割线 -->
+    <div class="divider"></div>
+        
+    <!-- 新增95%宽度横线 -->
+    <div class="horizontal-line"></div>
+        <!-- 数据统计区 -->
+        <section class="stats-section">  <!-- 新增容器 -->
+            <div class="stat-item">
+                <h2>15 Institutes</h2>
+                <p>cross disciplinary boundaries</p>
+            </div>
+            
+            <div class="stat-item">
+                <h2>20 Libraries</h2>
+                <p>hold over 12 million items</p>
+            </div>
+            
+            <div class="stat-item">
+                <h2>$2.2 Billion</h2>
+                <p>sponsored research budget</p>
+            </div>
+        </section>
+        <!-- 下方分割线 -->
+        <div class="divider"></div>
+        
+        <!-- 新增95%宽度横线 -->
+        <div class="horizontal-line"></div>
+        <!-- 底部链接 -->
+        <a href="#" class="research-link">More about research</a>
+    </main>
+
+    <!-- 原有脚本（保持在 body 末尾） -->
+    <script> 
+        document.addEventListener('DOMContentLoaded', function() { 
+            const targetImage = document.getElementById('target-image'); 
+            const overlayContent = document.querySelector('.overlay-content'); 
+
+            // 给图片元素添加过渡样式 
+            targetImage.style.transition = 'all 0.3s ease'; 
+
+            window.addEventListener('scroll', () => { 
+                const rect = targetImage.getBoundingClientRect(); 
+                const windowHeight = window.innerHeight; 
+
+                if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) { 
+                    targetImage.classList.add('blur-background'); 
+                    overlayContent.style.display = 'block'; 
+                } else { 
+                    targetImage.classList.remove('blur-background'); 
+                    overlayContent.style.display = 'none'; 
+                } 
+            }); 
+        }); 
+    </script> 
+</body>
+</html>

@@ -1,0 +1,227 @@
+/* 基础样式 */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* 新闻容器 */
+main.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 三栏水平布局行 */
+section.articles-row {
+    display: flex;
+    gap: 20px;
+}
+
+/* 特色文章卡片 */
+article.featured-article-card {
+    flex: 2.075;
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* 普通文章卡片 */
+article.article-card {
+    flex: 1;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    overflow: hidden;
+}
+
+/* 图片样式 */
+article.featured-article-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+article.article-card img {
+    width: 300px;
+    height: 210px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 文章内容区域 */
+.article-content {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: #fff;
+}
+
+article.featured-article-card .article-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+    color: white;
+}
+
+/* 分类标签 */
+.category1 {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.category2 {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+article.featured-article-card .category {
+    color: #fff;
+}
+
+article.article-card .category {
+    color: #820000;
+}
+
+/* 标题样式 */
+h2, h3 {
+    margin: 0;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+article.featured-article-card h2 {
+    font-size: 22px;
+    color: #fff;
+}
+
+article.article-card h3 {
+    font-size: 17px;
+    color: #000;
+    margin-top: auto;
+    font-weight: bold;
+}
+
+article.article-card h3:hover {
+    color: #006cb8;
+}
+
+/* 修改悬停效果，让鼠标悬停在文章卡片（包含图片和文字区域）时，文字颜色变化和图片缩放同步 */
+article.featured-article-card:hover img,
+article.article-card:hover img {
+    transform: scale(1.03);
+}
+
+article.article-card:hover h3 {
+    color: #006cb8; 
+}
+
+
+article.featured-article-card h2 {
+    color: #fff;
+    transition: color 0.3s ease; /* 添加颜色过渡效果 */
+}
+
+article.article-card h3 {
+    color: #000;
+    margin-top: auto;
+    font-weight: bold;
+    transition: color 0.3s ease; /* 添加颜色过渡效果 */
+}
+
+/* 更多新闻链接按钮 */
+.more-link {
+    margin-bottom: 70px; /* 底部外边距 */
+    display: inline-block; /* 转为行内块元素 */
+    text-align: center; /* 文本居中 */
+    margin-top: 30px; /* 顶部外边距 */
+    color: #ffffff; /* 文本颜色 */
+    text-decoration: none; /* 去除下划线 */
+    font-weight: bold; /* 字体加粗 */
+    border: 4px solid rgb(177,4,14); /* 边框样式 */
+    padding: 12px 60px; /* 内边距 */
+    margin-left: auto; /* 水平居中 */
+    margin-right: auto; /* 水平居中 */
+    display: table; /* 转为表格显示 */
+    background-color: rgb(177,4,14); /* 背景颜色 */
+    font-size: 1.3rem; /* 字体大小 */
+    font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.more-link:hover {
+    background-color: #820000; /* 更深的红色 */
+    border-color: #820000; /* 边框颜色 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 加深阴影 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    section.articles-row {
+        flex-direction: column;
+    }
+    
+    article.featured-article-card,
+    article.article-card {
+        height: 300px;
+        margin-bottom: 20px;
+    }
+}
+
+.article-card .article-content {
+    position: relative; /* 为子元素的绝对定位提供参考 */
+}
+
+.article-card .category2 {
+    background-color: white; /* 设置背景为白色 */
+    padding: 3px 5px; /* 添加内边距 */
+    display: inline-block; /* 使元素内联块显示 */
+    color:#820000; /* 设置字体颜色 */
+}
+.article-card .article-content h3 {
+    background-color: white; /* 设置背景为白色 */
+    padding: 5px 2px; /* 添加内边距 */
+    display: inline-block; /* 使元素内联块显示 */
+    margin: 1px; /* 添加外边距 */
+    position: absolute; /* 绝对定位 */
+    z-index: 1; /* 确保元素在图片之上 */
+}
+
+.article-card .category2 {
+    bottom: 90px; /* 距离底部的位置 */
+    left: 10px; /* 距离左侧的位置 */
+}
+
+.article-card .article-content h3 {
+    bottom: 30px; /* 距离底部的位置 */
+    left: 10px; /* 距离左侧的位置 */
+    max-width: calc(100% - 20px); /* 最大宽度 */
+    background-color: white; /* 设置背景为白色 */
+    padding: 5px 4px; /* 添加内边距 */
+    display: inline-block; /* 使元素内联块显示 */
+    margin: 1px; /* 添加外边距 */
+}

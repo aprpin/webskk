@@ -1,0 +1,336 @@
+/* 全局基础样式 ----------------------------------------------------------- */
+/* 定义页面整体字体、背景色、行高和内边距 */
+body {
+    font-family: Arial, sans-serif; /* 设置字体为 Arial 或 sans-serif */
+    line-height: 1.6; /* 设置行高为 1.6 */
+    color: #333;  /* 设置文本颜色为深灰色 */
+    max-width: 1600px; /* 改为最大宽度限制 */
+    min-height: 800px; /* 改为最小高度 */
+    margin: 0 auto; /* 水平居中 */
+    padding: 30px;  /* 增加内边距 */
+    width: auto; /* 自动宽度 */
+    display: flex;  /* 使用 flex 布局 */
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: center;  /* 水平居中 */
+  }
+
+main {
+    max-width: 1600px; /* 设置 main 最大宽度为 1600px */
+    height: 800px; /* 设置 main 高度为 800px */
+    margin: 0 auto; /* 水平居中 main 元素 */
+    padding: var(--spacing-lg); /* 使用自定义变量设置内边距 */
+    box-sizing: border-box; /* 盒模型包含内边距和边框 */
+    overflow: hidden; /* 隐藏溢出内容 */
+    display: flex; /* 使用 flex 布局 */
+    justify-content: center; /* 子元素水平居中 */
+  }
+
+/* 定义内容区最大宽度并居中显示 */
+.research-container {
+    max-width: 400px; /* 容器最大宽度 */
+    margin: 0 auto; /* 水平居中 */
+    text-align: center; /* 子元素文本居中 */
+}
+
+/* 统计区布局样式 --------------------------------------------------------- */
+/* 定义统计项容器的Flex布局，强制水平并排显示 */
+/* 调整统计区域间距 */
+.stats-section {
+    margin-top: 10px;  /* 原默认值通常为20-40px，调整为10px */
+    display: flex; /* 启用Flex布局 */
+    justify-content: center; /* 子元素水平居中 */
+    gap: 2rem; /* 子元素之间的水平间距 */
+    padding: 20px 0; /* 容器上下内边距 */
+    flex-wrap: nowrap; /* 禁止子项换行（强制并排） */
+}
+
+/* 统计项基础样式 --------------------------------------------------------- */
+/* 定义单个统计项的固定宽度和内边距 */
+.stat-item {
+    flex: 0 0 auto; /* 禁止放大/收缩，保持自然宽度 */
+    padding: 15px; /* 统计项内边距 */
+    min-width: 200px; /* 最小宽度防止内容过窄 */
+}
+
+/* 链接样式 --------------------------------------------------------------- */
+.research-link {
+    display: inline-block;  /* 内联块元素 */
+  background-color: #b1040e;  /* 红色 */
+  color: white;  /* 白色文字 */
+  padding: 12px 60px;  /* 内边距 */
+  font-family: 'Source Sans Pro', Arial, sans-serif;  /* 字体 */
+  font-weight: 600;  /* 字体粗细 */
+  font-size: 16px;  /* 字体大小 */
+  line-height: 1.5;  /* 行高 */
+  letter-spacing: 0.05em;  /* 字母间距 */
+  text-decoration: none;  /* 移除下划线 */
+  border: none;   /* 移除边框 */
+  cursor: pointer;    /* 鼠标指针 */
+  transition: background-color 0.3s;  /* 过渡效果 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);  /* 阴影 */
+  
+}
+
+
+/* 鼠标悬停效果 */ 
+.research-link:hover { 
+    background-color: #941212;     /* 更深的红色 */ 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 加深阴影 */ 
+}
+
+/* 主标题区样式 ----------------------------------------------------------- */
+/* 作者姓名样式（如"Renee Zhao"） */
+.header-section h2 {
+    color: #fff; /* 白色文字 */
+    margin: 1rem 0; /* 上下外边距 */
+}
+
+/* 主标题区整体文字颜色（覆盖子元素） */
+.header-section {
+    color: white; /* 白色文字 */
+}
+
+/* 标题组内链接样式（避免默认链接样式覆盖） */
+.header-section .title-group a.title-link {
+    color: white; /* 白色文字 */
+}
+
+/* "More"链接基础样式 */
+.title-link {
+    color: #fff; /* 白色文字 */
+    font-size: 1.2rem; /* 字体大小 */
+    text-decoration: none; /* 去除下划线 */
+    border-bottom: 1px solid #fff; /* 底部虚线 */
+    padding-bottom: 2px; /* 底部内边距 */
+    transition: opacity 0.3s; /* 透明度过渡动画 */
+}
+
+/* "More"链接悬停效果 */
+.title-link:hover {
+    opacity: 0.8; /* 悬停时透明度降低 */
+}
+
+/* 主标题样式（大段引用文字） */
+.header-section h1 {
+    font-weight: 400; /* 字体粗细（常规） */
+    font-size: 1.5625em; /* 字体大小 */
+    line-height: 1.35; /* 行高 */
+    margin-bottom: .8em; /* 底部外边距 */
+    transition: font-size .3s ease-out; /* 字体大小过渡动画 */
+}
+
+/* 作者姓名具体样式 */
+.header-section .title-group h2 {
+    font-size: 1.25em; /* 字体大小 */
+    margin-bottom: 0; /* 底部外边距（重置） */
+    margin-top: .64em; /* 顶部外边距 */
+}
+
+/* 副标题样式（如"Assistant Professor..."） */
+.header-section .subtitle {
+    font-size: 1em; /* 字体大小 */
+    font-weight: 400; /* 字体粗细（常规） */
+    margin-bottom: 0; /* 底部外边距（重置） */
+    font-style: italic; /* 斜体 */
+}
+
+/* 主标题区"More"链接具体样式 */
+.header-section .title-link {
+    color: #fff; /* 白色文字 */
+    font-size: 1em; /* 字体大小 */
+}
+
+/* 研究简介段落样式 ------------------------------------------------------- */
+
+/* 移除重复的覆盖浏览器默认样式的 .research-intro 定义 */
+.research-intro {
+    font-size: 1.1rem; /* 设置段落字体大小为 1.1rem */
+  margin-bottom: 30px; /* 设置段落底部外边距为 30px */
+  text-align: center; /* 段落文本居中 */
+}
+
+/* 统计项标题与段落间距优化 ----------------------------------------------- */
+/* 统计项标题样式（如"15 Institutes"） */
+.stat-item h2 {
+    color: #000000; /* 白色文字 */
+font-size: 2em; /* 字体大小 */
+    letter-spacing: -.5px; /* 字间距（收紧） */
+    display: block; /* 块级元素（占满父容器宽度） */
+    font-weight: 900; /* 字体粗细（极粗） */
+    line-height: 1.25em; /* 行高 */
+    margin-bottom: 0rem; /* 底部外边距（与段落间距） */
+    text-align: center; /* 段落文本居中 */
+}
+
+
+/* 统计项段落样式（如"cross disciplinary boundaries"） */
+.stat-item p {
+    font-size: 1.5em;
+    margin-top: 0rem; /* 顶部外边距（与标题间距） */
+    margin-bottom: 0; /* 底部外边距（重置） */
+    text-align: center; /* 段落文本居中 */
+    color: #000000; /* 白色文字 */
+}
+
+/* 新增全屏图片样式 */
+
+/* 图片容器样式 */
+.image-container {
+    position: relative;
+    background-color: #544948;
+    width: 100%;
+    margin: 0;  /* 新增：移除容器外边距 */
+    padding: 0; /* 新增：移除容器内边距 */
+}
+
+/* 全屏图片样式 */
+.members-card {
+    width: 100%;
+    height: 650px;
+    margin: 0;  /* 确保图片无外边距 */
+    padding: 0; /* 确保图片无内边距 */
+}
+
+/* 移除 body 默认边距 */
+body {
+    margin: 0;
+    padding: 0;  /* 新增：移除 body 内边距 */
+}
+
+/* 移除 main 容器边距 */
+main {
+    margin: 0;
+    padding: 0;
+}
+ 
+.members-card img { 
+    width: 100%;   /* 占满容器宽度 */
+    height: 100%;  /* 占满容器高度 */
+    display: block; 
+
+    margin: 0;     
+    padding: 0;    
+    object-fit: cover; /* 保持比例并裁剪 */
+} 
+
+/* 图片容器样式 */
+.image-container {
+    
+    position: relative; /* 为子元素的绝对定位创建基准 */
+    background-color: #544948;  /* 背景颜色 */
+}
+
+/* 新增虚化背景样式 */
+.blur-background {
+    /* 将模糊半径调整为 20px */
+    filter: blur(15px); 
+    /* 将模糊半径调整为 20px */
+    backdrop-filter: blur(15px);  /* 模糊效果 */
+    opacity: 1;  /* 不透明 */
+    clip-path: inset(10);  /* 裁剪路径 */
+    text-shadow: 1px 1px 6px #000;  /* 文字阴影 */
+    transition: all 0.3s ease;  /* 过渡效果 */
+}
+
+/* 新增覆盖内容样式 */
+.overlay-content {
+    position: absolute; /* 相对于图片容器绝对定位 */
+    top: 50%; /* 垂直居中 */
+    left: 50%;  /* 水平居中 */
+    transform: translate(-50%, -50%); /* 居中对齐 */
+    background: transparent;  /* 透明背景 */
+    padding: 20px;  /* 内边距 */
+    border-radius: 10px;  /* 圆角 */
+    z-index: 1; /* 确保在图片之上 */
+    display: none;  /* 默认隐藏 */
+    color: white; /* 设置字体颜色为白色 */
+    text-align: center; /* 文本水平居中 */
+    display: flex; /* 使用 flex 布局 */
+    flex-direction: column; /* 子元素垂直排列 */
+    align-items: center; /* 子元素水平居中 */
+    justify-content: center; /* 子元素垂直居中 */
+}
+
+/* 将 yan-card 类的图片设置为圆形 */
+.overlay-content .yan-card {
+    border-radius: 50%; /* 将边框半径设置为 50%，使图片变成圆形 */
+    object-fit: cover; /* 确保图片覆盖整个圆形区域，避免变形 */
+    width: 240px; /* 可根据实际情况调整宽度 */
+    height: 240px; /* 可根据实际情况调整高度，与宽度保持一致 */
+}
+
+/* 设置 overlay-content 内的标题字体颜色 */
+.overlay-content h3 {
+    color: white; /* 设置标题颜色为白色 */
+}
+
+/* 设置 overlay-content 内的链接字体颜色 */
+.overlay-content a {
+    color: white; /* 设置链接颜色为白色 */
+}
+
+.more-link{
+  color: #007BFF; /* 链接颜色 */
+  text-decoration: none;  /* 移除下划线 */
+  /* 移除 font-weight: bold */  /* 加粗 */
+  transition: all 0.3s ease;  /* 过渡效果 */
+  display: inline-flex;    /* 内联块元素 */  
+  align-items: center;     /* 垂直居中 */
+}
+
+/* 箭头单独设置 */
+.more-link::after {
+  content: '>'; /* 箭头内容 */
+  display: inline-block;  /* 内联块元素 */
+  margin-left: 5px;  /* 箭头与文本之间的间距 */
+  transition: transform 0.3s ease;  /* 过渡效果 */
+}
+
+/* 鼠标悬停时的样式 */
+.more-link:hover {
+  text-decoration: underline;  /* 悬停时添加下划线 */
+}
+
+/* 悬停时箭头动画 */
+.more-link:hover::after {
+  transform: translateX(5px);  /* 向右移动箭头 */
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+/* 新增 .aaa 类居中样式 */
+.aaa {
+    text-align: center; /* 内容文本居中 */
+    max-width: 1258px; /* 限制最大宽度（可根据需求调整） */
+    margin: 0 auto; /* 容器水平居中 */
+    font-size: 2.5em; /* 目标字体大小 */
+    line-height: 1.2; /* 行高 */
+    margin: 2rem 0; /* 上下外边距 */
+    color: black; /* 文字颜色 */
+    text-align: center; /* 文本居中 */
+    white-space: nowrap; /* 防止换行 */
+    padding: 0 20px; /* 左右内边距 */
+    margin-bottom: 30px; /* 底部外边距 */
+}
+
+/* 目标段落样式（对应 html 第35行的 <p> 标签） */
+.aaa p {
+    font-size: 1.5rem;  /* 设置段落字体大小为 1.1rem */
+    margin-bottom: 30px;  /* 设置段落底部外边距为 30px */
+    text-align: center;  /* 段落文本居中 */
+}
+
+/* 调整 .aaa 容器内的 h2 标题样式 */
+.aaa h2 {
+    font-weight: 900; /* 加粗字体 */
+    letter-spacing: -0.09em; /* 收紧字间距（值越小越紧凑，可根据实际效果调整） */
+}
+
+/* 新增95%宽度横线样式 */
+.horizontal-line {
+    border-top: 1px solid #808080; /* 使用与分割线相同的灰色 */
+    width: 95%;
+    margin: 10px auto; /* 上下留10px间距，水平居中 */
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- 将语言设置为中文 -->
+<html lang="zh-CN">
+  <head>
+    <!-- 声明字符编码为 UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- 设置网页标题 -->
+    <title>Stanford University仿站</title>
+    <!-- 引入外部样式表 -->
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body>
+    <!-- 这是网页的一级标题，显示健康护理相关内容 -->
+    <h1>Health Care</h1>
+    
+    <!-- 副标题，使用 aaa 类，可能用于防遮挡等特殊样式 -->
+    <subtitle class="aaa"> 
+      Advancing human health through innovative research, <br>
+      education, and care 
+    </subtitle>
+
+    <!-- 空行，用于增加页面间距 -->
+    <br>
+
+    <!-- 卡片网格区域，使用 card-grid 类，用于布局多张卡片 -->
+    <section class="card-grid">
+      <!-- 学生生活卡片，使用 campus-card 类定义卡片样式 -->
+      <article class="campus-card" ><figure class="card-image"><img src="images/Health-care-1.webp" alt="一群医生" style="width: var(--card-width); height: var(--card-height);"></figure><div class="card-content"><h2>Stanford Medicine</h2><p>Leading a worldwide revolution in precision health through biomedical research, education, and clinical enterprises</p><br><a href="#">Stanford Medicine</a></div></article>
+      <!-- Arts & Culture Card -->
+      <!-- 艺术与文化卡片，使用 campus-card 类定义卡片样式 -->
+      <article class="campus-card" ><figure class="card-image"><img src="images/Health-care-2-2048x1365.jpg" alt="蓝色护士" style="width: var(--card-width); height: var(--card-height);"></figure><div class="card-content"><h2>Stanford Health Care</h2><p>Leveraging expertise and advanced technology  to deliver unparalleled care for each patient's unique needs</p><br><a href="#">Stanford Health Care</a></div></article>
+      <!-- Recreation & Wellness Card -->
+      <!-- 娱乐与健康卡片，使用 campus-card 类定义卡片样式 -->
+      <article class="campus-card" >
+          <!-- 图片容器，使用 card-image 类 -->
+          <figure class="card-image">
+              <!-- 校园健身中心图片，设置图片路径、替代文本和尺寸 -->
+              <img src="images/Health-care-3.webp" alt="笑脸女人" 
+                   style="width: var(--card-width); height: var(--card-height);">
+          </figure>
+          <!-- 卡片内容区域，使用 card-content 类 -->
+          <div class="card-content">
+              <!-- 二级标题，显示斯坦福儿童健康相关内容 -->
+              <h2>Stanford Children's Health</h2>
+              <!-- 段落描述斯坦福儿童健康的相关信息 -->
+              <p>The only health care network in the Bay Area - and one of the few in the country - exclusively dedicated to pediatric and obstetric care</p> <br>
+              <!-- 链接，指向斯坦福儿童健康页面 -->
+              <a href="#">Stanford Children's Health</a>
+          </div>
+      </article>
+    </section>
+
+  <!-- 新增两个空行，用于增加页面间距 -->
+  <br><br>
+  
+  <!-- 红色按钮，点击可查看更多健康护理信息 -->
+  <a href="#" class="red-block-button">More about health care</a>
+  <!-- 新增两个空行，用于增加页面间距 -->
+  <br><br>
+
+  <!-- 隐藏的锚点 -->
+  <a href="#show-overlay" id="trigger-link" style="display: none;"></a>
+  
+  <!-- 图片部分 -->
+  <!-- 图片容器 -->
+  <div class="image-container">
+      <img src="images/yannie-banner.webp" alt="介绍的背景图" class="members-card" id="target-image">
+      <article class="overlay-content">
+          <!-- yan 大头照，使用 yan-card 类 -->
+          <img src="images/yannie-240x240.webp" alt="yan大头照" class="yan-card">
+          <!-- 引用 Yannie Tan 的话语 -->
+          <p>
+              “I think about all the projects that students throw themselves
+               at quarter after quarter, just really expanding and stretching their minds.
+               … Stanford allows you to experience evolutions of yourself.”
+          </p>
+          <!-- 引用内容的归属信息 -->
+          <div class="attribution">
+              <!-- 引用者姓名 -->
+              <h3>Yannie Tan</h3>
+              <!-- 引用者所属班级，添加 class -->
+              <p class="italic-text">Class of 2024</p>
+          </div>
+          <!-- 给链接添加类名 more-link -->
+          <a href="#" class="more-link">More</a> 
+      </article>
+  </div>
+  <br>
+  <!-- 触发显示的链接 -->
+   
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const targetImage = document.getElementById('target-image'); 
+        const overlayContent = document.querySelector('.overlay-content');
+
+        // 给图片元素添加过渡样式
+        targetImage.style.transition = 'all 0.3s ease';
+
+        window.addEventListener('scroll', () => {
+            const rect = targetImage.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) {
+                targetImage.classList.add('blur-background');
+                overlayContent.style.display = 'block';
+            } else {
+                targetImage.classList.remove('blur-background');
+                overlayContent.style.display = 'none';
+            }
+        });
+    });
+</script>
+  </body>

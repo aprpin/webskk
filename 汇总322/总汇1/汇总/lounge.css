@@ -1,0 +1,1424 @@
+
+body {
+  font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+  line-height: 1.5; /* 设置行高为 1.5 */
+  color: #000;  /* 设置字体颜色为黑色 */
+  max-width: 1600px; /* 改为最大宽度限制 */
+  min-height: 800px; /* 改为最小高度 */
+  margin: 0 auto; /* 水平居中 */
+  width: auto; /* 自动宽度 */
+  display: flex;  /* 使用 flex 布局 */
+  flex-direction: column; /* 垂直排列子元素 */
+  align-items: center;  /* 水平居中 */
+  padding: 0;
+  background-color: var(--bg-light-gray);
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 增大 main 元素尺寸，设置其布局和样式 */
+/* 进一步增大最大宽度 */
+main {
+  max-width: 1600px; /* 设置 main 最大宽度为 1600px */
+  height: 800px; /* 设置 main 高度为 800px */
+  margin: 0 auto; /* 水平居中 main 元素 */
+  padding: var(--spacing-lg); /* 使用自定义变量设置内边距 */
+  box-sizing: border-box; /* 盒模型包含内边距和边框 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  display: flex; /* 使用 flex 布局 */
+  justify-content: center; /* 子元素水平居中 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.25em;
+}
+
+/* 设置介绍段落样式 */
+.intro {
+  font-size: 1.1rem; /* 设置段落字体大小为 1.1rem */
+  margin-bottom: 25px; /* 设置段落底部外边距为 25px */
+  text-align: center; /* 段落文本居中 */
+}
+
+/* 设置分隔线样式 */
+.divider {
+  border: 0; /* 移除默认边框 */
+  height: 1px; /* 设置分隔线高度为 1px */
+  background-color: #ddd; /* 设置分隔线背景颜色为浅灰色 */
+  margin: 30px 0; /* 设置分隔线上下外边距为 30px */
+}
+
+/* 重新定义全局自定义变量，覆盖之前的设置 */
+:root {
+  --spacing-lg: 2rem; /* 重新定义大间距变量 */
+  --spacing-md: 1.5rem; /* 重新定义中等间距变量 */
+  --spacing-sm: 1rem; /* 重新定义小间距变量 */
+  --card-width: 450px;  /* 卡片宽度 */
+  --card-height: 350px;   /* 卡片高度 */
+  --stanford-dark-red: #820000;  /* 红色 */
+  --stanford-light-red: #B31B1B;  /* 红色 */
+  --text-dark: #333333;  /* 深灰色 */
+  --text-light: #ffffff;  /* 白色 */
+  --border-gray: #dddddd;  /* 灰色边框 */
+  --bg-light-gray: #f7f7f7;  /* 浅灰色背景 */
+  --bg-white: #ffffff;  /* 白色背景 */
+}
+
+/* 基础布局设置，调整 body 和 main 元素的宽度和布局 */
+/* 基础布局 */
+body, main {
+  width: auto; /* 宽度自动，由内容撑开 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  display: flex; /* 使用 flex 布局 */
+  flex-direction: column; /* 子元素垂直排列 */
+  align-items: center; /* 子元素水平居中 */
+}
+
+/* 再次调整 main 元素的宽度和布局 */
+main {
+  max-width: none; /* 取消最大宽度限制 */
+  width: auto; /* 宽度自动，由内容撑开 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  display: flex; /* 使用 flex 布局 */
+  justify-content: center; /* 子元素水平居中 */
+}
+
+/* 调整主标题样式 */
+h1 {
+  font-size: 3.0517578125em;  /* 字体大小 */
+  letter-spacing: -.85px;  /* 字符间距 */
+  font-weight: 900; 
+  line-height: 1.2em;  /* 行高 */
+  margin: 1rem 0 0.5rem; /* 修改为：上边距1rem，下边距0.5rem */
+  color: black; /* 设置字体颜色为黑色 */
+  text-align: center;  /* 文本居中 */
+  white-space: nowrap;  /* 不换行 */
+  padding: 0 20px;  /* 左右内边距 */
+}
+
+.aaa {
+  font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+  position: relative;   /* 相对定位 */
+  z-index: 9999;  /* 确保标题在最上层 */
+  pointer-events: auto;  /* 允许点击 */
+  opacity: 1;  /* 标题不透明 */
+  margin-bottom: 30px;  /* 底部边距 */
+  margin-top: 0.2em;  /* 将顶部间距从0.333333em改为0.2em */
+  font-size: 1.7em;  /* 字体大小 */
+  text-align: center;  /* 文本居中 */
+}
+
+p {
+  display: block;  /* 块级元素 */
+  margin-block-start: 1em;  /* 段落块开始边距 */
+  margin-block-end: 1em;  /* 段落块结束边距 */
+  margin-inline-start: 0px;  /* 段落内联开始边距 */
+  margin-inline-end: 0px;  /* 段落内联结束边距 */
+  unicode-bidi: isolate;  /* 隔离Unicode双向文本 */
+  text-align: center;  /* 文本居中 */
+}
+
+/* 
+ * 顶部信息导航栏样式
+ * 定义顶部信息导航栏的背景颜色、内边距和底部边框样式，
+ * 用于展示一些辅助信息和导航链接。
+ */
+.info-nav {
+  background-color: rgba(255, 255, 255,0); /* 关键：白色80%透明度 */
+  padding: 10px 0; /* 在导航栏的上下添加 10px 的内边距 */
+ 
+}
+
+/* 顶部信息导航栏内的容器样式 */
+.info-nav .container {
+  display: flex; /* 使用 Flexbox 布局，方便元素的排列和对齐 */
+  align-items: center; /* 让元素在垂直方向上居中对齐 */
+  justify-content: flex-end; /* 让元素右对齐，将导航内容放置在右侧 */
+}
+
+/* 顶部信息导航栏内的信息组样式 */
+.info-nav .info-group {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 让元素在垂直方向上居中对齐 */
+}
+
+/* 顶部信息导航栏内的导航链接容器样式 */
+.info-nav .nav-links {
+  display: flex; /* 使用 Flexbox 布局 */
+  gap: 20px; /* 设置导航链接之间的间距为 20px */
+}
+
+/* 顶部信息导航栏内的搜索框样式 */
+.info-nav .search {
+  margin-left: 20px; /* 给搜索框添加左边距，控制和左侧元素的间距 */
+}
+
+.info-nav a {
+  text-decoration: none; /* 去除链接的下划线，使链接看起来更简洁 */
+  color: white; /* 设置链接的颜色为白色 */
+  font-size: 0.9em; /* 设置链接的字体大小为父元素字体大小的 0.9 倍 */
+}
+
+.search {
+  margin-left: auto; /* 将搜索框推到右侧，利用剩余空间 */
+}
+
+
+.logo {
+  font-size: 24px; /* 设置 Logo 的字体大小为 24px */
+  font-weight: bold; /* 设置 Logo 的字体粗细为粗体 */
+  color: #ffffff; /* 设置 Logo 的颜色为 Stanford 红色 */
+  text-decoration: none; /* 去除 Logo 的下划线 */
+  white-space: nowrap; /* 防止 Logo 文字换行 */
+}
+
+/* ===== 透明导航栏核心代码 ===== */
+.logo-nav-container {
+  align-items: center;  /* 垂直居中 */
+  padding: 10px 5%; /* 内边距 */
+  background-color: rgba(255, 255, 255,0); /* 关键：白色80%透明度 */
+  backdrop-filter: blur(5px); /* 毛玻璃效果（可选） */
+  z-index: 100; /* 确保导航栏在其他元素之上 */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 底部细边框（可选） */
+}
+
+/* 信息导航栏容器 */
+.info-nav {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 让元素在垂直方向上居中对齐 */
+}
+
+/* 容器内边距 */
+.info-nav .container {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 让元素在垂直方向上居中对齐 */
+}
+
+/* 主导航栏（下方菜单） */
+.main-nav {
+    top: 50px; /* 根据logo-nav-container高度调整 */
+    left: 0;  /* 左对齐 */
+    right: 0; /* 右对齐 */
+    padding: 10px 5%; /* 内边距 */
+    background-color: rgba(255, 255, 255, 0); /* 透明度略低于顶部 */
+    backdrop-filter: blur(5px);
+   
+}
+
+/* 主导航菜单内容器样式 */
+.main-nav .container {
+  display: flex; /* 使用 Flexbox 布局 */
+  justify-content: center; /* 让元素在水平方向上居中对齐 */
+}
+
+/* 
+ * 主导航菜单链接样式
+ * 设置主导航菜单链接的外边距、字体大小、颜色、文本装饰和字体粗细，
+ * 使主导航菜单链接在页面中醒目显示，并添加悬停效果。
+ */
+.menu a {
+  margin: 0 15px; /* 在主导航菜单链接的左右添加 15px 的外边距 */
+  font-size: 16px; /* 设置主导航菜单链接的字体大小为 16px */
+  color: white; /* 设置主导航菜单链接的颜色为白色 */
+  text-decoration: none; /* 去除主导航菜单链接的下划线 */
+  font-weight: bold; /* 设置主导航菜单链接的字体粗细为粗体 */
+  position: relative; /* 相对定位，用于下划线 */
+}
+
+.menu a::after {
+  content: '';  /* 伪元素内容为空 */
+  /*position: absolute; /* 绝对定位 */
+  position: relative;
+  left: 50%; /* 从中间开始 */
+  right: 50%; /* 从中间开始 */
+  bottom: -2px; /* 下划线位置 */
+  height: 2px; /* 下划线高度 */
+  background-color: #ffffff; /* 下划线颜色 */
+  transition: all 0.3s ease; /* 动画效果 */
+}
+
+.menu a:hover::after {
+  left: 0; /* 扩展到左边 */
+  right: 0; /* 扩展到右边 */
+}
+
+.hero {
+  position: relative; /* 相对定位，确保子元素可以绝对定位 */
+  top: 20px; /* 根据导航高度调整 */
+  left: 0;  
+  right: 0; /* 左右对齐 */
+  text-align: center; /* 将主标题区域内的文本居中对齐 */
+  color: white; /* 设置主标题区域内的文本颜色为白色 */
+  z-index: 98; /* 设置层级，确保在页面中突出显示 */
+}
+
+.container h1 {
+  font-size: 72px; /* 设置主标题的字体大小为 72px */
+  margin-bottom: 20px; /* 在主标题底部添加 20px 的外边距 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影，增强立体感 */
+  position: absolute; /* 绝对定位 */
+  top: 500%; /* 距离顶部 50% */
+  left: 50%; /* 距离左侧 50% */
+  transform: translate(-50%, -50%); /* 精确居中 */
+  width: 100%; /* 确保标题占据整个宽度 */
+  text-align: center; /* 将标题文本居中对齐 */
+}
+
+/* 探索框内标题样式 */
+.explore-box h2 {
+  background-color: rgb(177,4,14);  /* 设置探索框的背景颜色为 Stanford 红色 */
+  color: white; /* 设置探索框内标题的颜色为白色 */
+  margin:0; /* 重置探索框内标题的外边距为 0 */
+
+}
+
+/* 页面容器样式 */
+.page-container {
+    position: relative; /* 相对定位 */
+    min-height: 100vh;  /* 确保页面容器至少占据整个视口高度 */
+}
+
+/* 背景图片和渐变阴影 */
+.background-image-wrapper {
+  position: relative; /* 确保相对定位 */
+  z-index: auto; /* 确保 z-index 正常 */
+  top: 0; /* 顶部对齐 */
+  left: 0;  /* 左侧对齐 */
+  width: 100%;  /* 宽度100% */
+  height: 100%; /* 高度100% */
+  z-index: -1;  /* 放在内容下方 */
+}
+
+/* 背景图片样式 */
+.background-image {
+  width: 100%;  /* 宽度100% */
+  height: 100%;   /* 高度100% */
+  object-fit: cover;  /* 保持图片比例并覆盖整个区域 */
+  display: block;  /* 显示为块级元素 */
+}
+
+.background-image-wrapper::after {
+  content: "";  /* 伪元素内容为空 */
+  top: 0;  /* 顶部对齐 */
+  left: 0;  /* 左侧对齐 */
+  width: 100%;  /* 宽度100% */
+  height: 30%;  /* 高度30% */
+  background: linear-gradient(to bottom,
+  rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));  /* 从底部开始的渐变 */
+}
+
+/* Logo 和导航栏容器 - 移除背景颜色 */
+.logo-nav-container {
+  top: 0; /* 顶部对齐 */
+  left: 0;  /* 左侧对齐 */
+  right: 0; /* 左右对齐 */
+  display: flex;  /* 使用 Flexbox 布局 */
+  justify-content: space-between; /* 两端对齐 */
+  align-items: center;  /* 垂直居中对齐 */
+  padding: 10px 5%;  /* 内边距 */
+  backdrop-filter: none; /* 移除毛玻璃效果 */
+  z-index: 100; /* 确保在内容上方 */
+  border-bottom: none; /* 移除底部边框 */
+}
+
+/* 主导航栏（下方菜单） - 移除背景颜色 */
+.main-nav {
+left: 0;  /* 左侧对齐 */
+right: 0; /* 左右对齐 */
+padding: 10px 5%;  /* 内边距 */
+backdrop-filter: none; /* 移除毛玻璃效果 */
+z-index: 99;  /* 确保在内容上方 */
+}
+
+/* 主导航菜单内容器样式 */
+.main-nav .container {
+  display: flex; /* 使用 Flexbox 布局 */
+  justify-content: center; /* 让元素在水平方向上居中对齐 */
+}
+
+/* 
+ * 主导航菜单链接样式
+ * 设置主导航菜单链接的外边距、字体大小、颜色、文本装饰和字体粗细，
+ * 使主导航菜单链接在页面中醒目显示，并添加悬停效果。
+ */
+.menu a {
+  margin: 0 15px; /* 在主导航菜单链接的左右添加 15px 的外边距 */
+  font-size: 16px; /* 设置主导航菜单链接的字体大小为 16px */
+  color: #333; /* 设置主导航菜单链接的颜色为深灰色 */
+  text-decoration: none; /* 去除主导航菜单链接的下划线 */
+  font-weight: bold; /* 设置主导航菜单链接的字体粗细为粗体 */
+}
+
+/* 主导航菜单链接悬停样式 */
+.menu a:hover {
+  color: #ffffff; /* 设置悬停时主导航菜单链接的颜色为 Stanford 红色 */
+}
+
+.hero {
+  top: -700px; /* 根据导航高度调整 */
+  left: 0;  /* 左对齐 */
+  right: 0;   /* 右对齐 */
+  text-align: center; /* 将主标题区域内的文本居中对齐 */
+  color: black; /* 设置主标题区域内的文本颜色为白色 */
+  z-index: 98; /* 设置层级，确保在页面中突出显示 */
+}
+
+
+.hero h1 {
+  font-size: 72px; /* 设置主标题的字体大小为 72px */
+  margin-bottom: 10px; /* 在主标题底部添加 20px 的外边距 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影，增强立体感 */
+}
+
+/* 探索框样式 */
+.explore-box {
+  background-color: rgb(177,4,14);
+  color: black; /* 设置探索框内标题的颜色为白色 */
+  padding: 10px;  /* 内边距 */
+  text-align: center;  /* 文本居中对齐 */
+  position: fixed;  /* 固定定位 */
+  bottom: 0;  /* 底部对齐 */
+  left: 0;  /* 左侧对齐 */
+  right: 0;  /* 右侧对齐 */
+  width: 100%;  /* 宽度100% */
+}
+  
+
+.explore-box h2 {
+  display: inline-flex; /* 保持原有布局 */
+  align-items: center;  /* 保持原有垂直居中 */
+  justify-content: center; /* 新增水平居中 */
+  width: auto; /* 宽度自适应 */
+  margin: 10 auto; /* 水平居中 */
+  padding: 5px 30px; /* 保持原有内边距 */
+}
+
+.explore-box h2::after {
+  content: "∨"; 
+  margin-left: 8px; /* 在箭头和文字之间添加一些间距 */
+  font-size: 0.8em; /* 调整箭头的字体大小 */
+}
+
+
+.nav-links a {
+  margin: 0 8px; /* 在导航链接的左右添加 8px 的外边距 */
+  font-size: 14px; /* 设置导航链接的字体大小为 14px */
+  color: #ffffff; /* 设置导航链接的颜色为深灰色 */
+  text-decoration: none; /* 去除导航链接的下划线 */
+  white-space: nowrap; /* 防止导航链接文字换行 */
+  position: relative; /* 相对定位，用于上滑线 */
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  left: 50%; /* 从中间开始 */
+  right: 50%; /* 从中间开始 */
+  top: -2px; /* 上滑线位置 */
+  height: 2px; /* 上滑线高度 */
+  background-color:black; /* 上滑线颜色 */
+  transition: all 0.3s ease; /* 动画效果 */
+}
+
+.nav-links a:hover::before {
+  left: 0; /* 扩展到左边 */
+  right: 0; /* 扩展到右边 */
+}
+
+.menu a {
+  margin: 0 15px; /* 在主导航菜单链接的左右添加 15px 的外边距 */
+  font-size: 16px; /* 设置主导航菜单链接的字体大小为 16px */
+  color: black; /* 设置主导航菜单链接的颜色为白色 */
+  text-decoration: none; /* 去除主导航菜单链接的下划线 */
+  font-weight: bold; /* 设置主导航菜单链接的字体粗细为粗体 */
+  position: relative; /* 相对定位，用于下划线 */
+}
+
+.search a {
+  font-size: 16px; /* 设置搜索图标的字体大小为 14px */
+  color: black; /* 设置搜索图标的颜色为白色 */
+  text-decoration: none; /* 去除搜索图标的下划线 */
+  white-space: nowrap; /* 防止搜索图标文字换行 */
+  padding: 16px 30px; /* 添加内边距 */
+  transition: background-color 0.3s ease; /* 添加过渡效果 */
+}
+
+.search a:hover {
+  color: black; /* 设置悬停时搜索图标的颜色为白色 */
+  background-color: #8C1515; /* 设置悬停时背景颜色为 Stanford 红色 */
+}
+
+/* 搜索图标悬停样式 */
+.search a:hover {
+  color: black; /* 设置悬停时搜索图标的颜色为 Stanford 红色 */
+}
+
+.info-group p {
+  color: black; /* 设置字体颜色为白色 */
+  margin-right: 10px; /* 保持与右侧元素的间距 */
+}
+/* 毛羽涵结束 */
+
+
+
+
+/* 戴勇俊开始 */
+.stats-section {
+    margin-top: 10px;  /* 原默认值通常为20-40px，调整为10px */
+    display: flex; /* 启用Flex布局 */
+    justify-content: center; /* 子元素水平居中 */
+    gap: 2rem; /* 子元素之间的水平间距 */
+    padding: 20px 0; /* 容器上下内边距 */
+    flex-wrap: nowrap; /* 禁止子项换行（强制并排） */
+}
+
+/* 统计项基础样式 --------------------------------------------------------- */
+/* 定义单个统计项的固定宽度和内边距 */
+.stat-item {
+    flex: 0 0 auto; /* 禁止放大/收缩，保持自然宽度 */
+    padding: 15px; /* 统计项内边距 */
+    min-width: 200px; /* 最小宽度防止内容过窄 */
+}
+/* 戴勇俊结束 */
+
+
+/* wen */
+/* 三张图片的设置 */
+.card-image {
+  overflow: visible; /* 允许内容溢出容器 */
+}
+
+/* 设置图片容器内图片的显示方式 */
+.card-image img {
+  object-fit: contain; /* 保持图片原始宽高比，完整显示在容器内 */
+}
+
+/* 卡片网格系统样式设置，使用 flex 布局排列卡片 */
+/* 卡片网格系统 */
+/* 修改卡片容器布局 */
+section.card-grid {
+  display: flex;  /* 使用 flex 布局 */
+  flex-wrap: wrap;  /* 允许换行 */
+  gap: 1.3rem;      /* 卡片之间的间距 */
+  padding-bottom: 0;  /* 底部内边距 */
+  justify-content: center;  /* 水平居中 */
+}
+
+/* 校园卡片容器样式 */
+.campus-card {
+  flex: 1; /* 允许卡片扩展 */
+  flex-shrink: 0;  /* 禁止卡片缩小 */
+  width: var(--card-width);
+  margin: 0 0.5rem;  /* 左右外边距从var(--spacing-sm)缩小到0.5rem */
+  display: flex;  /* 使用 flex 布局 */
+  flex-direction: column;  /* 垂直排列子元素 */
+  padding: 0;  /* 移除内边距 */
+  position: relative;  /* 相对定位 */
+  }
+
+/* 再次设置图片容器样式，调整位置和尺寸 */
+/* 图片容器 */
+.card-image {
+  width: 100%; /* 宽度占满父元素 */
+  height: var(--card-height); /* 使用自定义变量设置高度 */
+  padding: 0; /* 移除内边距 */
+  margin: 0; /* 移除外边距 */
+  position: relative; /* 设置相对定位 */
+  overflow: visible; /* 允许内容溢出容器 */
+  transform: translateY(-20px); /* 向上移动 20px */
+  display: block; /* 恢复默认布局方式 */
+  justify-content: flex-start; /* 新增 */
+}
+
+/* 再次设置图片容器内图片的样式 */
+.card-image img {
+  width: 100%; /* 宽度占满父元素 */
+  height: 100%; /* 高度占满父元素 */
+  object-fit: contain; /* 保持图片原始宽高比，完整显示在容器内 */
+  display: block; /* 转换为块级元素 */
+}
+
+/* 卡片内容区域样式设置，调整文本位置和布局 */
+/* 内容区域 */
+.card-content {
+  padding: var(--spacing-md) 0; /* 统一左右内边距为0 */
+  margin-top: -40px;  /* 向上移动 40px */
+  width: 100%; /* 继承父容器完整宽度 */
+  box-sizing: border-box; /* 新增：包含内边距 */
+  padding-left: 0; /* 强制左侧无内边距 */
+  margin-left: 0; /* 移除左侧外边距 */
+  width: calc(100% - var(--spacing-md)); /* 调整宽度，减去右侧内边距 */
+  text-align: left; /* 文本左对齐 */
+}
+
+
+/* 设置卡片内容区域内段落样式 */
+.card-content p {
+  margin: 0; /* 移除外边距 */
+  line-height: 1.6; /* 设置行高 */
+  color: black; /* 设置段落文本颜色 */
+  text-align: left; /* 段落文本左对齐 */
+  font-size: 1.1rem; /* 段落字体大小 */
+  margin-bottom: var(--spacing-sm); /* 底部外边距 */
+  margin-top: 0; /* 移除顶部外边距 */
+
+}
+
+/* 让 header 内的标题和介绍文字居中 */
+header h1,
+header p.intro {
+  text-align: center; /* 文本居中 */
+}
+
+/* 让页面底部无类名的链接居中 */
+/* 假设 "More about campus life" 是页面底部的链接，让其居中 */
+a[href]:not([class]) {
+  display: block; /* 转换为块级元素 */
+  
+}
+
+/* 定义卡片内容区域内文本左对齐 */
+/* 定义卡片内容区域内超链接的样式 */
+.card-content {
+  text-align: left; /* 让该区域内的文本左对齐 */
+}
+
+/* 设置卡片内容区域内链接的显示方式 */
+.card-content a {
+  display: inline-block; /* 让链接以行内块元素显示 */
+}
+
+/* 设置卡片内容区域内链接的基本样式 */
+.card-content a {
+  display: inline-block; /* 转为行内块元素 */
+  color: #006fe6; /* 链接颜色 */
+  text-decoration: none; /* 去除下划线 */
+  font-weight: bold; /* 字体加粗 */
+  transition: color 0.3s ease; /* 颜色过渡效果 */
+  text-align: left; /* 文本左对齐 */
+  margin: 0; /* 移除外边距 */
+  padding: 0; /* 移除内边距 */
+  float: none; /* 移除浮动 */
+  clear: both; /* 清除浮动 */
+  font-size: 1.1rem; /* 链接字体大小 */
+  margin-bottom: var(--spacing-sm); /* 底部外边距 */
+  margin-top: 0; /* 移除顶部外边距 */
+}
+
+/* 箭头单独设置 */
+.card-content a::after {
+  content: '>'; /* 箭头内容 */
+  display: inline-block;  /* 内联块元素 */
+  margin-left: 5px;  /* 箭头与文本之间的间距 */
+  transition: transform 0.3s ease;  /* 过渡效果 */
+}
+
+/* 鼠标悬停时的样式 */
+.card-content a:hover {
+  color: #0056b3;   /* 悬停时的颜色 */
+  text-decoration: underline;  /* 悬停时添加下划线 */
+}
+
+/* 悬停时箭头动画 */
+.card-content a:hover::after {
+  transform: translateX(5px);  /* 向右移动箭头 */
+}
+/* 三张图片的设置结束 */
+
+
+
+/* 红色按钮部分 */
+.red-block-button {
+  display: inline-block;  /* 内联块元素 */
+  background-color: #b1040e;  /* 红色 */
+  color: white;  /* 白色文字 */
+  padding: 22px 100px;  /* 内边距 */
+  font-family: 'Source Sans Pro', Arial, sans-serif;  /* 字体 */
+  font-weight: 600;  /* 字体粗细 */
+  font-size: 1.3rem;  /* 字体大小 */
+  line-height: 1.5;  /* 行高 */
+  letter-spacing: 0.05em;  /* 字母间距 */
+  text-decoration: none;  /* 移除下划线 */
+  border: none;   /* 移除边框 */
+  cursor: pointer;    /* 鼠标指针 */
+  transition: background-color 0.3s;  /* 过渡效果 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);  /* 阴影 */
+  margin-bottom: 70px; /* 底部外边距 */
+  text-align: center; /* 文本居中 */
+  margin-top: 13px; /* 顶部外边距 */
+  margin-left: auto; /* 水平居中 */
+  margin-right: auto; /* 水平居中 */
+  display: table; /* 转为表格显示 */
+  background-color: rgb(177,4,14); /* 背景颜色 */
+}
+
+/* 鼠标悬停效果 */
+.red-block-button:hover {
+  background-color: #941212;     /* 更深的红色 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 加深阴影 */
+}
+/* 红色按钮部分结束 */
+
+/*yan个人介绍部分*/
+/* 修改body的overflow设置 */
+body {
+  overflow: auto;  /* 改为auto允许滚动 */
+  width: auto;  /* 宽度自动 */
+  height: auto;  /* 高度自动 */
+  min-height: 800px;  /* 最小高度 */
+}
+
+/* 修改main元素的overflow设置 */
+main {
+  overflow: visible;  /* 改为可见 */
+  height: auto;  /* 高度自动 */
+  min-height: 800px;  /* 最小高度 */
+}
+
+/* 调整卡片网格容器 */
+section.card-grid {
+  overflow: visible;  /* 确保内容可见 */
+  flex-wrap: wrap;  /* 允许卡片换行 */
+  min-height: 400px;  /* 保证最小高度 */
+}
+
+/* 新增全屏图片样式 */
+.members-card {
+    width: 100vw;  /* 视口宽度 */
+    margin: 0;     /* 无外边距 */
+    padding: 0;    /* 无内边距 */
+    overflow: hidden; /* 隐藏溢出内容 */
+}
+
+/* 图片样式 */
+.members-card img {
+    width: 100%;   /* 图片宽度占满父元素 */
+    height: auto;  /* 保持图片原始宽高比 */
+    display: block; /* 转换为块级元素，移除底部间隙 */
+    margin: 0;     /* 无外边距 */
+    padding: 0;    /* 无内边距 */
+}
+
+/* 图片容器样式 */
+.image-container {
+    position: relative; /* 为子元素的绝对定位创建基准 */
+    background-color: #544948;  /* 背景颜色 */
+}
+
+/* 新增虚化背景样式 */
+.blur-background {
+    /* 将模糊半径调整为 20px */
+    filter: blur(15px); 
+    /* 将模糊半径调整为 20px */
+    backdrop-filter: blur(15px);  /* 模糊效果 */
+    opacity: 2;  /* 不透明 */
+    clip-path: inset(0.1);  /* 裁剪路径 */
+    text-shadow: 0px 0px 0px #000;  /* 文字阴影 */
+    transition: all 0.3s ease;  /* 过渡效果 */
+}
+
+/* 新增覆盖内容样式 */
+.overlay-content {
+    position: absolute; /* 相对于图片容器绝对定位 */
+    top: 50%; /* 垂直居中 */
+    left: 50%;  /* 水平居中 */
+    transform: translate(-50%, -50%); /* 居中对齐 */
+    background: transparent;  /* 透明背景 */
+    padding: 20px;  /* 内边距 */
+    border-radius: 10px;  /* 圆角 */
+    z-index: 1; /* 确保在图片之上 */
+    display: none;  /* 默认隐藏 */
+    color: white; /* 设置字体颜色为白色 */
+    text-align: center; /* 文本水平居中 */
+    display: flex; /* 使用 flex 布局 */
+    flex-direction: column; /* 子元素垂直排列 */
+    align-items: center; /* 子元素水平居中 */
+    justify-content: center; /* 子元素垂直居中 */
+}
+
+/* 将 yan-card 类的图片设置为圆形 */
+.overlay-content .yan-card {
+    border-radius: 50%; /* 将边框半径设置为 50%，使图片变成圆形 */
+    object-fit: cover; /* 确保图片覆盖整个圆形区域，避免变形 */
+    width: 240px; /* 可根据实际情况调整宽度 */
+    height: 240px; /* 可根据实际情况调整高度，与宽度保持一致 */
+}
+
+/* 设置 overlay-content 内的标题字体颜色 */
+.overlay-content h3 {
+    color: white; /* 设置标题颜色为白色 */
+}
+
+/* 设置 overlay-content 内的链接字体颜色 */
+.overlay-content a {
+    color: white; /* 设置链接颜色为白色 */
+}
+
+.more-link{
+  color: #007BFF; /* 链接颜色 */
+  text-decoration: none;  /* 移除下划线 */
+  /* 移除 font-weight: bold */  /* 加粗 */
+  transition: all 0.3s ease;  /* 过渡效果 */
+  display: inline-flex;    /* 内联块元素 */  
+  align-items: center;     /* 垂直居中 */
+}
+
+/* 箭头单独设置 */
+.more-link::after {
+  content: '>'; /* 箭头内容 */
+  display: inline-block;  /* 内联块元素 */
+  margin-left: 5px;  /* 箭头与文本之间的间距 */
+  transition: transform 0.3s ease;  /* 过渡效果 */
+}
+
+/* 鼠标悬停时的样式 */
+.more-link:hover {
+  text-decoration: underline;  /* 悬停时添加下划线 */
+}
+
+/* 悬停时箭头动画 */
+.more-link:hover::after {
+  transform: translateX(5px);  /* 向右移动箭头 */
+}
+
+.italic-text {
+    font-style: italic;   /* 斜体 */
+}
+ /*yan个人介绍部分结束*/
+/* wen部分结束*/
+
+ 
+/* 为 intro 和 larger-text 类组合设置字体大小 */
+.intro.larger-text {
+   font-size: 1.5rem;
+}
+  
+/* 介绍段落样式，设置介绍段落的字体大小和对齐方式 */
+.intro {
+  font-size: 1.1rem; /* 修改为和 index.css 中副标题类似的字体大小 */
+  margin-bottom: 30px; /* 设置段落底部外边距为 30px */
+  text-align: center; /* 段落文本居中 */
+  margin-top: 0; /* 移除顶部外边距 */
+}
+  
+/* 卡片内容区域标题样式，设置 h3 标题的字号和外边距 */
+h3 {
+  font-size: 1.5em; /* 设置 h3 标题字号为 1.5 倍父元素字体大小 */
+  margin-top: -1.5rem; /* 减小标题顶部外边距，可根据需求调整数值 */
+}
+
+/* 移除不必要的宽度限制 */
+header h1,
+header p.intro {
+  width: auto; /* 宽度自动 */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 64px;
+}
+  
+/* 分隔线样式，设置第一条分隔线的样式 */
+.divider {
+  border: 0; /* 移除边框 */
+  height: 1px; /* 高度为 1px */
+  background-color: #F4F4F4; /* 修改背景颜色为灰色，和整体背景一致 */
+  margin: 30px 0; /* 上下外边距 */
+}
+  
+/* 设置第二个板块的背景颜色 */
+.athletics-section {
+  background-color: #F4F4F4; /* 设置背景颜色为浅灰色 */
+}
+  
+/* 设置第二个板块内卡片的背景颜色 */
+.athletics-section .campus-card {
+  background-color: #F4F4F4; /* 设置卡片背景颜色为浅灰色 */
+}
+  
+/* 分隔线样式，设置第二条分隔线的样式 */
+.divider2 {
+  border: 0; /* 移除边框 */
+  height: 1px; /* 高度为 1px */
+  background-color: #EAEAEA; /* 背景颜色 */
+}
+  
+  /* 响应式调整，当屏幕宽度小于等于 768px 时调整布局 */
+  @media (max-width: 768px) {
+    main {
+      padding: var(--spacing-md); /* 调整内边距 */
+    }
+    section.card-grid {
+      gap: var(--spacing-sm); /* 调整间距 */
+    }
+    .campus-card {
+      margin: var(--spacing-sm) 0; /* 调整外边距 */
+    }
+  }
+  
+  /* 设置指定标题和介绍的样式，设置 header 内的 h1 和 .intro 类元素的布局 */
+  header h1,
+  header p.intro {
+    width: 805px; /* 宽度 */
+    margin-left: auto; /* 左外边距自动 */
+    margin-right: auto; /* 右外边距自动 */
+    margin-top: 64px; /* 顶部外边距 */
+  }
+  
+  /* 假设 "More about campus life" 是页面底部的链接，让其靠左显示 */
+  a[href]:not([class]) {
+    display: inline-block; /* 转为行内块元素 */
+    text-align: left; /* 文本靠左 */
+  }
+  
+  /* 为带有 animated-arrow 类的链接添加向右箭头伪元素 */
+  .animated-arrow::after {
+    content: ">"; /* 伪元素内容 */
+    display: inline-block; /* 转为行内块元素 */
+    margin-left: 8px; /* 左外边距 */
+    transition: transform 0.3s ease; /* 过渡效果 */
+  }
+  
+  /* 鼠标悬停时，向右箭头伪元素向右移动 3 像素 */
+  .animated-arrow:hover::after {
+    transform: translateX(3px); /* 向右移动 3 像素 */
+  }
+  
+  /* 设置 header 内 h1 标题和 p.intro 段落之间的边距 */
+  header h1 + p.intro {
+    margin-top: 10px; /* 可根据需求调整这个值来改变边距大小 */
+  }
+  
+  /* 减少 header 底部外边距 */
+  header {
+    margin-bottom: 10px; /* 可根据需求调整这个值 */
+  }
+  
+  /* 减少紧跟在 header 后面的 main 元素的顶部外边距 */
+  header + main {
+    margin-top: 10px; /* 可根据需求调整这个值 */
+  }
+  
+  /* 设置 athletics-wrapper 区域的背景颜色、宽度和高度 */
+  .athletics-wrapper {
+    background-color: #F4F4F4; /* 背景颜色 */
+    width: 100vw; /* 让宽度占满视口 */
+    height: auto; /* 高度自动，根据内容自适应 */
+    margin: 0; /* 移除可能的外边距 */
+    padding: 0; /* 移除可能的内边距 */
+  }
+  /* yyt结束部分 */
+
+
+
+.site-header {
+  border-bottom: 1px solid var(--border-gray);  /* 底部边框 */
+}
+
+.header-top {
+  display: flex;  /* 使用 Flexbox 布局 */
+  justify-content: space-between;  /* 两端对齐 */
+  align-items: center;  /* 垂直居中 */
+  padding: 10px 20px;  /* 内边距 */
+  background-color: var(--stanford-dark-red);  /* 背景颜色 */
+  color: var(--text-light);  /* 文本颜色 */
+}
+
+.header-top .logo {
+    font-size: 20px;  /* 字体大小 */
+    font-weight: bold;  /* 字体加粗 */
+    color: var(--text-light);  /* 文本颜色 */
+    text-decoration: none;  /* 去除下划线 */
+    padding-left: 20px;  /* 左侧内边距 */
+}
+
+.header-info {
+    display: flex;  /* 使用 Flexbox 布局 */
+    align-items: center;  /* 垂直居中 */
+    flex-wrap: wrap;  /* 允许换行 */
+    justify-content: flex-end;  /* 靠右对齐 */
+    padding-right: 20px;  /* 右侧内边距 */
+}   
+
+.header-info .info-label {
+    font-size: 12px;  /* 字体大小 */
+    color: var(--text-light);  /* 文本颜色 */
+    margin-right: 10px;  /* 右侧外边距 */
+    white-space: nowrap;  /* 防止换行 */
+}
+
+.header-info .info-links {
+    list-style: none;  /* 去除列表样式 */
+    padding: 0;  /* 移除内边距 */
+    margin: 0 10px 0 0;  /* 外边距 */
+    display: flex;  /* 使用 Flexbox 布局 */
+    flex-wrap: wrap;  /* 允许换行 */
+    gap: 0 10px;  /* 元素之间的间距 */
+}
+
+.header-info .info-links a {
+    text-decoration: none;  /* 去除下划线 */
+    color: var(--text-light);  /* 文本颜色 */
+    font-size: 12px;  /* 字体大小 */
+    white-space: nowrap;  /* 防止换行 */
+    transition: text-decoration 0.3s ease;  /* 过渡效果 */
+}
+.header-info .info-links a:hover {
+    text-decoration: underline;  /* 悬停时下划线 */
+    color: rgba(255, 255, 255, 0.8);  /* 悬停时颜色 */
+}
+
+.header-info .search-box {
+    display: flex;  /* 使用 Flexbox 布局 */
+    align-items: center;  /* 垂直居中 */
+    border: 1px solid rgba(255, 255, 255, 0.5);  /* 边框 */
+    border-radius: 5px;  /* 圆角 */
+    padding: 3px 8px;  /* 内边距 */
+    background-color: var(--stanford-dark-red);  /* 背景颜色 */
+    margin-left: 10px;  /* 左侧外边距 */
+    height: 25px;  /* 高度 */
+    box-sizing: border-box;  /* 包含内边距和边框 */
+}
+
+.header-info .search-box i {
+    color: var(--text-light);  /* 图标颜色 */ 
+    margin-right: 5px;  /* 右侧外边距 */
+    font-size: 13px;  /* 图标大小 */
+}
+
+.header-info .search-box input {
+    border: none;  /* 去除边框 */
+    background: transparent;  /* 透明背景 */
+    outline: none;  /* 去除焦点时的轮廓 */
+    font-size: 12px;  /* 字体大小 */
+    color: var(--text-light);  /* 文本颜色 */
+    width: 80px;  /* 宽度 */
+}
+.header-info .search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);  /* 占位符颜色 */
+}
+
+.main-navigation {
+    background-color: var(--stanford-dark-red);  /* 背景颜色 */
+    padding: 0;  /* 移除内边距 */
+    height: 40px;  /* 高度 */
+    display: flex;  /* 使用 Flexbox 布局 */
+    align-items: center;  /* 垂直居中 */
+}
+
+.main-navigation .container {
+    max-width: 1200px;  /* 最大宽度 */
+    margin: 0 auto;  /* 水平居中 */
+    padding: 0 20px;  /* 内边距 */
+}
+
+.main-navigation .container ul {
+    list-style: none;  /* 去除列表样式 */
+    padding: 0; /* 移除内边距 */
+    margin: 0;  /* 移除外边距 */
+    display: flex;  /* 使用 Flexbox 布局 */
+    justify-content: flex-start;  /* 靠左对齐 */
+    flex-wrap: wrap;  /* 允许换行 */
+}
+
+.main-navigation .container ul li a {
+    display: block;  /* 转为块级元素 */
+    padding: 10px 15px;  /* 内边距 */
+    text-decoration: none;  /* 去除下划线 */
+    color: var(--text-light);  /* 文本颜色 */
+    font-size: 14px;  /* 字体大小 */
+    white-space: nowrap;  /* 防止换行 */
+    transition: background-color 0.3s ease;  /* 过渡效果 */
+}
+
+.main-navigation .container ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.2);  /* 悬停时背景颜色 */
+}
+
+.hero-banner {
+    width: 100%;  /* 宽度 */
+    height: 400px;  /* 高度 */
+    background-image: url('images/222.jpg');  /* 背景图片 */
+    background-size: cover;  /* 背景图片大小 */
+    background-position: center;  /* 背景图片位置 */
+    background-repeat: no-repeat;  /* 背景图片不重复 */
+}
+
+.social-links-wrapper {
+    background-color: #f0f0f0;  /* 背景颜色 */
+    padding: 30px;  /* 内边距 */
+    margin-top: 20px;  /* 顶部外边距 */
+}
+.social-links {
+    display: flex;  /* 使用 Flexbox 布局 */
+    justify-content: flex-end;  /* 靠右对齐 */
+    gap: 25px;  /* 元素之间的间距 */
+    max-width: 1200px;  /* 最大宽度 */
+    margin: 0 auto;  /* 水平居中 */
+    padding: 0 20px;  /* 内边距 */
+}
+.social-links a {
+    color: #3f3f3f;  /* 链接颜色 */
+    margin: 0;  /* 移除外边距 */
+    padding: 0;  /* 移除内边距 */
+    text-decoration: none;  /* 去除下划线 */
+    display: inline-block;  /* 转为行内块元素 */
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;  /* 过渡效果 */
+}
+.social-links a i {
+    margin: 0;  /* 移除外边距 */
+    padding: 0;  /* 移除内边距 */
+    display: block;  /* 转为块级元素 */
+    font-size: 22px;  /* 图标大小 */
+}
+
+.social-links a:hover {
+    transform: scale(1.2);  /* 放大效果 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);  /* 阴影效果 */
+}
+
+.social-links a.facebook:hover { color: #3b5998; }
+.social-links a.twitter:hover { color: #1da1f2; }
+.social-links a.instagram:hover { color: #d73676; }
+.social-links a.youtube:hover { color: #cd201f; }
+.social-links a.linkedin:hover { color: #0072b1; }
+.social-links a.apple:hover { color: #555; }
+
+
+.white-bar {
+    height: 15px;    /* 高度 */
+    background-color: var(--bg-white);  /* 背景颜色 */
+    border-bottom: 1px solid var(--border-gray);  /* 底部边框 */
+}
+
+.main-content-wrapper {
+    background-color: var(--bg-white);  /* 背景颜色 */
+    padding: 40px 0;  /* 内边距 */
+}
+.main-content {
+    display: flex;  /* 使用 Flexbox 布局 */
+    flex-wrap: wrap;  /* 允许换行 */
+    justify-content: space-between;  /* 两端对齐 */
+    padding-top: 0;  /* 顶部内边距 */
+}
+.main-content .column {
+    flex: 1;  /* 占据剩余空间 */
+    min-width: 180px;  /* 最小宽度 */
+    padding-right: 20px;  /* 右侧内边距 */
+    margin-bottom: 20px;  /* 底部外边距 */
+    box-sizing: border-box;  /* 包含内边距和边框 */
+}
+.main-content .column:last-child {
+    padding-right: 0;  /* 最后一列移除右侧内边距 */
+}
+.main-content .column h3 {
+    font-size: 16px;  /* 字体大小 */
+    color: var(--stanford-light-red);  /* 文本颜色 */
+    margin-bottom: 10px;  /* 底部外边距 */
+    text-transform: uppercase;  /* 大写 */
+    letter-spacing: 0.5px;  /* 字母间距 */
+}
+.main-content .column ul {
+    list-style: none;  /* 去除列表样式 */
+    padding: 0;  /* 移除内边距 */
+    margin: 0;  /* 移除外边距 */
+}
+.main-content .column ul li {
+    margin-bottom: 5px;  /* 底部外边距 */
+}
+.main-content .column ul li a {
+    text-decoration: none;  /* 去除下划线 */
+    color: var(--text-dark);  /* 文本颜色 */
+    font-size: 14px;  /* 字体大小 */
+    transition: color 0.3s ease, text-decoration 0.3s ease;  /* 过渡效果 */
+}
+.main-content .column ul li a:hover {
+    color: #007bff;  /* 悬停时颜色 */
+    text-decoration: underline;  /* 悬停时下划线 */
+}
+.main-content .action-buttons {
+    display: flex;  /* 使用 Flexbox 布局 */
+    flex-direction: column;  /* 垂直布局 */
+    align-items: flex-start;  /* 靠左对齐 */
+    padding-left: 20px;  /* 左侧内边距 */
+    flex-basis: 180px;  /* 基础宽度 */
+    min-width: 180px;  /* 最小宽度 */
+    flex-grow: 0;  /* 不允许增长 */
+    box-sizing: border-box;  /* 包含内边距和边框 */
+}
+.main-content .action-buttons .button {
+    display: block;  /* 转为块级元素 */
+    width: 150px;  /* 宽度 */
+    padding: 8px 15px;  /* 内边距 */
+    margin-bottom: 8px;  /* 底部外边距 */
+    border: 1px solid var(--border-gray);  /* 边框 */
+    background-color: var(--bg-white);  /* 背景颜色 */
+    color: var(--text-dark);  /* 文本颜色 */
+    text-align: center;  /* 文本居中 */
+    text-decoration: none;  /* 去除下划线 */
+    font-size: 14px;  /* 字体大小 */
+    border-radius: 0;  /* 圆角 */
+    white-space: nowrap;  /* 防止换行 */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;  /* 过渡效果 */
+} 
+
+.main-content .action-buttons .button:hover {
+    background-color: var(--bg-white);  /* 悬停时背景颜色 */
+    color: var(--stanford-light-red);  /* 悬停时文本颜色 */
+    border-color: var(--stanford-light-red);  /* 悬停时边框颜色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* 阴影效果 */
+}
+
+.site-footer {
+    background-color: var(--stanford-dark-red);  /* 背景颜色 */
+    color: var(--text-light);  /* 文本颜色 */
+    padding: 20px 0;  /* 内边距 */
+    font-size: 13px;  /* 字体大小 */
+    position: relative;  /* 相对定位 */
+    height: 180px;  /* 高度 */
+    display: flex;    /* 使用 Flexbox 布局 */
+    align-items: center;  /* 垂直居中 */
+    flex-direction: column;  /* 垂直布局 */
+    justify-content: center;  /* 水平居中 */
+}
+
+.footer-content-new {
+    display: flex;  /* 使用 Flexbox 布局 */
+    flex-wrap: wrap;  /* 允许换行 */
+    align-items: center;  /* 垂直居中 */
+    justify-content: center;  /* 水平居中 */
+    max-width: 1200px;  /* 最大宽度 */
+    margin: 0 auto;  /* 水平居中 */
+    padding: 0 20px;  /* 内边距 */
+    width: 100%;  /* 宽度 */
+    padding-bottom: 40px;  /* 底部内边距 */
+}
+
+.footer-main-content-wrapper {
+    display: flex;  /* 使用 Flexbox 布局 */
+    align-items: center;    /* 垂直居中 */
+    justify-content: center;  /* 水平居中 */
+    flex-wrap: wrap;  /* 允许换行 */
+    gap: 20px;  /* 元素之间的间距 */
+    width: 100%;  /* 宽度 */
+    max-width: fit-content;  /* 最大宽度 */
+}
+
+.footer-left-col {
+    flex-shrink: 0;  /* 不允许缩小 */
+    margin-right: 0;  /* 右侧外边距 */
+    margin-bottom: 0;  /* 底部外边距 */
+    padding-left: 0;  /* 左侧内边距 */
+    display: flex;  /* 使用 Flexbox 布局 */
+    align-items: center;  /* 垂直居中 */
+    height: 90px;  /* 高度 */
+}
+
+.stanford-logo-text {
+    display: flex;  /* 使用 Flexbox 布局 */
+    flex-direction: column;  /* 垂直布局 */
+    font-weight: bold;  /* 加粗 */
+    font-size: 24px;  /* 字体大小 */
+    line-height: 1.1;  /* 行高 */
+    color: var(--text-light);  /* 文本颜色 */
+    white-space: nowrap;  /* 防止换行 */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);  /* 文本阴影 */
+}
+
+.logo-university {
+    font-size: 16px;  /* 字体大小 */
+    font-weight: normal;  /* 不加粗 */
+} 
+
+.footer-right-col {
+    flex-grow: 0;  /* 不允许增长 */
+    display: flex;  /* 使用 Flexbox 布局 */
+    flex-direction: column;  /* 垂直布局 */
+    align-items: flex-start;  /* 靠左对齐 */
+    padding-right: 0;  /* 右侧内边距 */
+    height: 90px;  /* 高度 */
+    justify-content: center;  /* 垂直居中 */
+}
+
+.footer-nav-top ul,
+.footer-nav-bottom ul {
+    list-style: none;  /* 去除列表样式 */
+    padding: 0;  /* 移除内边距 */
+    margin: 0;  /* 移除外边距 */
+    display: flex;  /* 使用 Flexbox 布局 */
+    flex-wrap: wrap;  /* 允许换行 */
+    gap: 0 20px;  /* 元素之间的间距 */
+    justify-content: flex-start;  
+}
+
+.footer-nav-top ul {
+    margin-bottom: 8px;  /* 底部外边距 */
+}
+.footer-nav-bottom ul {
+    margin-bottom: 0;  /* 底部外边距 */
+}
+
+.footer-nav-top ul li a,
+.footer-nav-bottom ul li a {
+    text-decoration: none;  /* 去除下划线 */
+    color: var(--text-light);  /* 文本颜色 */
+    transition: text-decoration 0.3s ease, color 0.3s ease;  /* 过渡效果 */
+    white-space: nowrap;  /* 防止换行 */
+    font-size: 14px;  /* 字体大小 */
+}
+
+.footer-nav-top ul li a:hover,
+.footer-nav-bottom ul li a:hover {
+    text-decoration: underline;  /* 悬停时下划线 */
+    color: rgba(255, 255, 255, 0.8);  /* 悬停时颜色 */
+}
+
+.copyright-new {
+    text-align: center;  /* 文本居中 */
+    position: absolute;  /* 绝对定位 */
+    bottom: 15px;  /* 底部位置 */
+    left: 0;  /* 左侧位置 */
+    right: 0;  /* 右侧位置 */
+    padding: 0 20px;  /* 内边距 */
+    box-sizing: border-box;  /* 包含内边距和边框 */
+    width: 100%;  /* 宽度 */
+}
+
+.copyright-new p {
+    margin: 0;  /* 移除外边距 */
+    color: rgba(255, 255, 255, 0.7);  /* 文本颜色 */
+}
+
+@media (max-width: 992px) {
+    .main-content .column {
+        min-width: 25%; /* 最小宽度 */
+        flex-basis: 30%;  /* 基础宽度 */
+    }
+    .main-content .action-buttons {
+        flex-basis: 100%;  /* 基础宽度 */
+        align-items: center;  /* 居中对齐 */
+        padding-left: 0;  /* 左侧内边距 */
+    }
+    .main-content .action-buttons .button {
+        width: 80%;  /* 宽度 */
+        max-width: 200px;  /* 最大宽度 */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top { 
+        flex-direction: column; /* 垂直布局 */
+        align-items: flex-start;  /* 靠左对齐 */
+        padding-left: 20px;  /* 左侧内边距 */
+        padding-right: 20px;  /* 右侧内边距 */
+    }
+    .header-info {
+        margin-top: 10px; /* 顶部外边距 */
+        width: 100%;  /* 宽度 */
+        flex-direction: column; /* 垂直布局 */
+        align-items: flex-start;  /* 靠左对齐 */
+        justify-content: flex-start;  /* 顶部对齐 */
+    }
+    .header-info .info-links {
+        margin-top: 5px;  /* 顶部外边距 */
+        margin-bottom: 10px;  /* 底部外边距 */
+        gap: 5px 10px;  /* 元素之间的间距 */
+    }
+    .header-info .search-box {
+        margin-left: 0;  /* 左侧外边距 */
+        width: 100%;  /* 宽度 */
+        box-sizing: border-box;  /* 包含内边距和边框 */
+    }
+
+    .header-info .search-box input {
+        width: calc(100% - 30px);  /* 输入框宽度 */
+    }
+
+    .main-navigation {
+        height: auto;    /* 高度 */
+    }
+
+    .main-navigation .container ul {
+        flex-direction: column;  /* 垂直布局 */
+    }
+    .main-navigation .container ul li a {
+        padding: 10px 20px;  /* 内边距 */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);  /* 底部边框 */
+    }
+    .main-navigation .container ul li:last-child a {
+        border-bottom: none;  /* 移除底部边框 */
+    }
+
+    .main-content {
+        flex-direction: column;  /* 垂直布局 */
+    }
+
+    .main-content .column {
+        padding-right: 0;  /* 右侧内边距 */
+        min-width: unset;  /* 最小宽度 */
+        width: 100%;  /* 宽度 */
+    }
+    .main-content .action-buttons {
+        padding-left: 0;  /* 左侧内边距 */
+        align-items: center;  /* 居中对齐 */
+    }
+    .main-content .action-buttons .button {
+        width: 80%;  /* 宽度 */
+        max-width: 250px;  /* 最大宽度 */
+    }
+
+    .site-footer {
+        height: auto;    /* 高度 */
+        padding-bottom: 70px;  /* 底部内边距 */
+        align-items: center;  /* 垂直居中 */
+        flex-direction: column;    /* 垂直布局 */
+        justify-content: center;  /* 水平居中 */
+    } 
+
+    .footer-content-new {
+        flex-direction: column;  /* 垂直布局 */
+        gap: 0;
+    }
+
+    .footer-main-content-wrapper {
+        flex-direction: column;  /* 垂直布局 */
+        gap: 20px;  /* 元素之间的间距 */
+        text-align: center;  /* 文本居中 */
+    }
+
+    .footer-left-col {
+        margin-right: 0;  /* 右侧外边距 */
+        margin-bottom: 0;  /* 底部外边距 */
+        padding-left: 0;  /* 左侧内边距 */
+        display: flex;  /* 使用 Flexbox 布局 */
+        align-items: center;  /* 垂直居中 */
+    }
+
+    .footer-right-col {
+        align-items: center;  /* 垂直居中 */
+        height: auto;    /* 高度 */
+    }
+
+    .footer-nav-top ul,
+    .footer-nav-bottom ul {
+        flex-direction: column;  /* 垂直布局 */
+        gap: 5px 0;  /* 元素之间的间距 */
+        margin-bottom: 10px;  /* 底部外边距 */
+        justify-content: center;  /* 水平居中 */
+    }
+
+    .copyright-new {
+        position: static;  /* 静态定位 */
+        transform: none;  /* 无变换 */
+        margin-top: 20px;  /* 顶部外边距 */
+        left: auto;  /* 左侧位置 */
+        right: auto;  /* 右侧位置 */   
+    }
+}
+/* 薛薛结束 */
